@@ -8,6 +8,11 @@
 <style>
 
 body{
+<div class="environment-switch">
+<button onclick="setEnvironment('forest')">🌲</button>
+<button onclick="setEnvironment('water')">💧</button>
+<button onclick="setEnvironment('meadow')">🌾</button>
+</div>
 margin:0;
 font-family:Georgia,serif;
 color:#2f3a2f;
@@ -40,6 +45,14 @@ body{
 </div>
   animation:breathe 18s ease-in-out infinite;
 }
+<script>
+
+function setEnvironment(type){
+document.body.classList.remove("forest","water","meadow");
+document.body.classList.add(type);
+}
+
+</script>
   
 .content{
 max-width:900px;
