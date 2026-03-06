@@ -3,110 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Jan Novosad</title>
 
 <style>
 
 body{
-<div class="environment-switch">
-<button onclick="setEnvironment('forest')">🌲</button>
-<button onclick="setEnvironment('water')">💧</button>
-<button onclick="setEnvironment('meadow')">🌾</button>
-</div>
+font-family: Georgia, serif;
 margin:0;
-font-family:Georgia,serif;
+padding:0;
+background:linear-gradient(#f5f5f5,#ffffff);
 color:#2f3a2f;
-background:
-radial-gradient(circle at 20% 30%, rgba(210,230,200,0.7), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(240,220,200,0.6), transparent 40%),
-radial-gradient(circle at 50% 10%, rgba(200,230,220,0.4), transparent 40%),
-linear-gradient(#eef5ea,#ffffff);
-background-attachment: fixed;
-}
-  
-@keyframes breathe{
-0%{filter:brightness(100%)}
-50%{filter:brightness(103%)}
-100%{filter:brightness(100%)}
-}
-<script>
-
-function setEnvironment(type){
-document.body.classList.remove("forest","water","meadow");
-document.body.classList.add(type);
+line-height:1.6;
 }
 
-</script>  
-body{
-<div class="environment-switch">
-<button onclick="setEnvironment('forest')">🌲</button>
-<button onclick="setEnvironment('water')">💧</button>
-<button onclick="setEnvironment('meadow')">🌾</button>
-</div>
-  animation:breathe 18s ease-in-out infinite;
-}
-<script>
+/* HLAVIČKA */
 
-function setEnvironment(type){
-document.body.classList.remove("forest","water","meadow");
-document.body.classList.add(type);
-}
-
-</script>
-  
-.content{
-max-width:900px;
-margin:auto;
-padding:80px 20px;
+header{
+text-align:center;
+padding:80px 20px 40px 20px;
 }
 
 h1{
-text-align:center;
-font-size:46px;
+font-size:42px;
 margin-bottom:10px;
 }
 
-.claim{
-text-align:center;
-font-size:20px;
-opacity:0.7;
-margin-bottom:60px;
+.subtitle{
+font-size:18px;
+color:#666;
 }
 
+/* SEKCE */
+
 section{
-margin-bottom:60px;
+max-width:800px;
+margin:auto;
+padding:40px 20px;
+}
+
+h2{
+font-size:28px;
+margin-bottom:20px;
 }
 
 ul{
 padding-left:20px;
 }
-
-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-max-width:500px;
-}
-
-input,textarea{
-padding:12px;
-border:1px solid #ccc;
-font-family:inherit;
-}
-
-button{
-padding:12px;
-border:none;
-background:#4a6b4a;
-color:white;
-cursor:pointer;
-}
-
-button:hover{
-background:#2f4f2f;
-}
-
-<style>
 
 /* ATMOSFÉRY */
 
@@ -128,7 +71,7 @@ radial-gradient(circle at 40% 60%, rgba(240,230,180,0.6), transparent 40%),
 linear-gradient(#f4f7e8,#ffffff);
 }
 
-/* tlačítka přepínače */
+/* PŘEPÍNAČ PROSTŘEDÍ */
 
 .environment-switch{
 position:fixed;
@@ -149,48 +92,60 @@ box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
 </style>
-  
+
 </head>
 
 <body>
 
-<div class="content">
+<div class="environment-switch">
+<button onclick="setEnvironment('forest')">🌲</button>
+<button onclick="setEnvironment('water')">💧</button>
+<button onclick="setEnvironment('meadow')">🌾</button>
+</div>
+
+<header>
 
 <h1>Jan Novosad</h1>
-<p class="claim">Odpověď si každý nese v sobě.</p>
+
+<p class="subtitle">
+Odpověď si každý nese v sobě.
+</p>
+
+</header>
 
 <section>
+
 <h2>Můj příběh</h2>
-<p>
-Moje cesta vedla od výkonu ke klidu.<br><br>
-Od kontroly k důvěře v rytmus.<br><br>
-Inspirací je mi příroda a její cykličnost.
-</p>
+
+<p>Moje cesta vedla od výkonu ke klidu.</p>
+
+<p>Od kontroly k důvěře v rytmus.</p>
+
+<p>Inspirací je mi příroda a její cykličnost.</p>
+
 </section>
 
 <section>
+
 <h2>Benefity zpomalení</h2>
+
 <ul>
 <li>Regulace nervového systému</li>
 <li>Hlubší kontakt s tělem</li>
 <li>Jasnější rozhodování</li>
 <li>Vnitřní stabilita</li>
 </ul>
-</section>
-
-<section>
-<h2>Kontakt</h2>
-
-<form action="https://formspree.io/f/TVUJ_KOD" method="POST">
-<input type="text" name="name" placeholder="Vaše jméno" required>
-<input type="email" name="email" placeholder="Váš e-mail" required>
-<textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
-<button type="submit">Odeslat</button>
-</form>
 
 </section>
 
-</div>
+<script>
+
+function setEnvironment(type){
+document.body.classList.remove("forest","water","meadow");
+document.body.classList.add(type);
+}
+
+</script>
 
 </body>
 </html>
