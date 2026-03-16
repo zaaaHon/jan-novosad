@@ -3,148 +3,399 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Jan Novosad</title>
 
 <style>
-
 body{
-font-family: Georgia, serif;
-margin:0;
-padding:0;
-background:linear-gradient(#f5f5f5,#ffffff);
-color:#2f3a2f;
-line-height:1.6;
-}
-
-/* HLAVIČKA */
-
-header{
-text-align:center;
-padding:80px 20px 40px 20px;
-}
-
-h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.subtitle{
-font-size:18px;
-color:#666;
-}
-
-/* SEKCE */
-
-section{
-max-width:800px;
-margin:auto;
-padding:40px 20px;
-}
-
-h2{
-font-size:28px;
-margin-bottom:20px;
-}
-
-ul{
-padding-left:20px;
-}
-
-/* ATMOSFÉRY */
-
-.forest{
-background:
-radial-gradient(circle at 30% 30%, rgba(200,230,200,0.7), transparent 40%),
-linear-gradient(#e6f2e6,#ffffff);
-}
-
-.water{
-background:
-radial-gradient(circle at 60% 20%, rgba(200,220,240,0.6), transparent 40%),
-linear-gradient(#e8f4ff,#ffffff);
-}
-
-.meadow{
-background:
-radial-gradient(circle at 40% 60%, rgba(240,230,180,0.6), transparent 40%),
-linear-gradient(#f4f7e8,#ffffff);
+  font-family: Georgia, serif;
+  margin:0;
+  padding:0;
+  color:#2f3a2f;
+  line-height:1.8;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(200,230,200,0.55), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(235,225,205,0.45), transparent 40%),
+    linear-gradient(#eef5ea,#ffffff);
+  transition: background 0.6s ease;
 }
 
 /* PŘEPÍNAČ PROSTŘEDÍ */
-
 .environment-switch{
-position:fixed;
-top:20px;
-right:20px;
-display:flex;
-gap:10px;
+  position:fixed;
+  top:20px;
+  right:20px;
+  display:flex;
+  gap:10px;
+  z-index:20;
 }
 
 .environment-switch button{
-border:none;
-padding:8px 10px;
-cursor:pointer;
-font-size:18px;
-background:white;
-border-radius:6px;
-box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  border:none;
+  padding:10px 12px;
+  cursor:pointer;
+  font-size:18px;
+  background:rgba(255,255,255,0.88);
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.12);
+  transition:transform 0.2s ease;
 }
 
-</style>
+.environment-switch button:hover{
+  transform:scale(1.05);
+}
 
+/* ATMOSFÉRY */
+.forest{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(200,230,200,0.7), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,235,210,0.5), transparent 40%),
+    linear-gradient(#e6f2e6,#ffffff);
+}
+
+.water{
+  background:
+    radial-gradient(circle at 60% 20%, rgba(200,220,240,0.65), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(215,235,245,0.55), transparent 40%),
+    linear-gradient(#e8f4ff,#ffffff);
+}
+
+.meadow{
+  background:
+    radial-gradient(circle at 40% 60%, rgba(240,230,180,0.65), transparent 40%),
+    radial-gradient(circle at 75% 25%, rgba(235,240,190,0.45), transparent 40%),
+    linear-gradient(#f4f7e8,#ffffff);
+}
+
+/* HERO */
+header{
+  text-align:center;
+  padding:110px 20px 70px 20px;
+  max-width:980px;
+  margin:auto;
+}
+
+h1{
+  font-size:58px;
+  margin-bottom:14px;
+  line-height:1.15;
+  color:#233223;
+}
+
+.subtitle{
+  font-size:24px;
+  color:#435543;
+  max-width:900px;
+  margin:0 auto 28px auto;
+}
+
+.intro{
+  font-size:21px;
+  max-width:780px;
+  margin:auto;
+  color:#3f4b3f;
+}
+
+/* SECTIONS */
+section{
+  max-width:960px;
+  margin:auto;
+  padding:30px 20px 40px 20px;
+}
+
+h2{
+  font-size:34px;
+  margin-bottom:20px;
+  line-height:1.3;
+  color:#243424;
+}
+
+p{
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+ul{
+  padding-left:24px;
+  font-size:20px;
+}
+
+li{
+  margin-bottom:12px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.72);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* MANIFEST */
+.manifest-list{
+  list-style:none;
+  padding-left:0;
+}
+
+.manifest-list li{
+  padding:14px 0;
+  border-bottom:1px solid rgba(47,58,47,0.12);
+}
+
+/* FOOTER */
+footer{
+  max-width:960px;
+  margin:auto;
+  padding:60px 20px 100px 20px;
+  font-size:18px;
+  color:#4d5a4d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  h1{
+    font-size:42px;
+  }
+
+  .subtitle{
+    font-size:20px;
+  }
+
+  .intro, p, ul{
+    font-size:18px;
+  }
+
+  h2{
+    font-size:28px;
+  }
+
+  .environment-switch{
+    top:12px;
+    right:12px;
+    gap:8px;
+  }
+
+  .environment-switch button{
+    padding:8px 10px;
+    font-size:16px;
+  }
+}
+</style>
 </head>
 
-<body>
+<body class="forest">
 
 <div class="environment-switch">
-<button onclick="setEnvironment('forest')">🌲</button>
-<button onclick="setEnvironment('water')">💧</button>
-<button onclick="setEnvironment('meadow')">🌾</button>
+  <button onclick="setEnvironment('forest')" title="Les">🌲</button>
+  <button onclick="setEnvironment('water')" title="Voda">💧</button>
+  <button onclick="setEnvironment('meadow')" title="Louka">🌾</button>
 </div>
 
 <header>
-
-<h1>Jan Novosad</h1>
-
-<p class="subtitle">
-Odpověď si každý nese v sobě.
-</p>
-
+  <h1>Jan Novosad</h1>
+  <p class="subtitle">
+    Odpovědi na život si každý neseme v sobě. Načítají se ale pouze v pocitu bezpečí.
+  </p>
+  <p class="intro">
+    Vytvářím prostor, ve kterém se skrze pohyb, zpomalení, naslouchání a vnímání sebe může obnovovat bezpečí nervového systému, vnitřní stabilita a přirozená schopnost těla i duše vracet se k celistvosti.
+  </p>
 </header>
 
 <section>
-
-<h2>Můj příběh</h2>
-
-<p>Moje cesta vedla od výkonu ke klidu.</p>
-
-<p>Od kontroly k důvěře v rytmus.</p>
-
-<p>Inspirací je mi příroda a její cykličnost.</p>
-
+  <div class="card">
+    <h2>Můj příběh</h2>
+    <p>
+      Moje cesta vedla od výkonu ke klidu. Od kontroly k důvěře. Od života postaveného na tlaku a přizpůsobování k životu, ve kterém se učím vnímat pravdu vlastního těla, rytmu a vnitřního směru.
+    </p>
+    <p>
+      Dlouho jsem hledal odpovědi venku. Postupně jsem ale začal chápat, že skutečná změna nepřichází silou, ale tehdy, když se člověk cítí dostatečně bezpečně na to, aby znovu uslyšel sám sebe.
+    </p>
+    <p>
+      Inspirací je mi příroda, její cykličnost, jednoduchost a schopnost být zároveň silná i jemná. Věřím, že stejnou moudrost neseme i my sami ve svém těle.
+    </p>
+  </div>
 </section>
 
 <section>
-
-<h2>Benefity zpomalení</h2>
-
-<ul>
-<li>Regulace nervového systému</li>
-<li>Hlubší kontakt s tělem</li>
-<li>Jasnější rozhodování</li>
-<li>Vnitřní stabilita</li>
-</ul>
-
+  <div class="card">
+    <h2>S čím lidem pomáhám</h2>
+    <p>
+      Jsem ten, který drží prostor, aby se skrze pohyb, zpomalení, naslouchání, práci s emocemi, vibracemi a vnímání sebe mohlo postupně objevovat uvolnění a bezpečí v nervovém systému.
+    </p>
+    <p>
+      V takovém nastavení mohou přirozeně probíhat samouzdravné procesy na úrovni těla i duše. Ne proto, že někdo něco „spraví“, ale protože tělo dostane podmínky, ve kterých si znovu může vzpomenout na svou vlastní inteligenci.
+    </p>
+    <ul>
+      <li>uvolnění přetížení a vnitřního tlaku</li>
+      <li>lepší regulace nervového systému</li>
+      <li>hlubší kontakt s tělem a jeho signály</li>
+      <li>větší jasnost v rozhodování</li>
+      <li>obnova životní energie a kapacity</li>
+      <li>návrat k přirozenému rytmu, bezpečí a autenticity</li>
+    </ul>
+  </div>
 </section>
 
+<section>
+  <div class="card">
+    <h2>Jak pracuji</h2>
+    <p>
+      Nepoužívám metody v klasickém slova smyslu. Opírám se o přítomnost, intuici, vlastní zkušenost a zkušenosti klientů, se kterými pracuji.
+    </p>
+    <p>
+      Rád pracuji s principy, které vycházejí z naší biomechanické, energetické a duchovní podstaty. Nesnažím se člověka vést k předem danému výsledku. Sdílím, nabízím prostor a klient má možnost následovat, zkoumat a objevovat skrze vlastní zkušenost.
+    </p>
+    <p>
+      To, co nabízím, není výkon. Je to bezpečný rámec pro kontakt, vnímání, uvolnění, obnovu a návrat k sobě.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Principy a zkušenosti, ze kterých vycházím</h2>
+    <p>
+      Vystudoval jsem FTVS UK, obor trenérství. Od dokončení studia jsem ale začal skutečně studovat především to, co mi dávalo smysl, provokovalo mě a doplňovalo prázdná místa v mém chápání člověka, pohybu a zdraví.
+    </p>
+    <p>
+      Můj základ vychází z oblasti pohybu, ale postupně se rozšířil o psychosomatiku, reflexní terapii, principy tradiční čínské medicíny, funkční trénink, přirozený pohyb, práci s dechem, cchi-kung, vibrace, zvuk, rytmus, výživu a přístupy inspirované přírodní medicínou.
+    </p>
+    <p>
+      Silně mě ovlivnil například přirozený pohyb (MovNat), práce s dechem (Oxygen Advantage), principy a cvičení čchi-kungu i šamansky laděný přístup skrze fyzickou práci, zvuk, vibraci, stravu a kontakt s přírodou.
+    </p>
+    <p>
+      Vše se ve mně propojuje v jednoduchých principech prostředí, vztahu, těla a transparentní kruhové komunikace.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Pro koho je moje práce</h2>
+    <p>
+      Pracuji především s lidmi, kteří mají jako prioritu kvalitněji zacházet se svou životní energií a tělem.
+    </p>
+    <ul>
+      <li>s těmi, kteří se chtějí cítit lépe sami se sebou</li>
+      <li>s těmi, kteří se chtějí naučit vnímat signály těla a jednat podle nich</li>
+      <li>s těmi, kteří se učí nejednat bez pocitu viny</li>
+      <li>s lidmi v období změny, přetížení, hledání nebo vnitřního přeladění</li>
+      <li>s jednotlivci, páry, skupinami i lidmi v pracovním prostředí</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Formáty spolupráce</h2>
+    <ul>
+      <li>individuální provázení</li>
+      <li>setkání skrze pohyb, dech, vnímání a práci s tělem</li>
+      <li>komorní skupinové kruhy</li>
+      <li>workshopy a delší procesy</li>
+      <li>sdílecí setkání a diskuse</li>
+      <li>vystoupení pro komunity, akce a organizace</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>O mně pro pořadatele</h2>
+    <p>
+      Jsem muž, partner a otec dvou dcer. Mou životní cestu až do čtyřiceti let doprovázely především pocity viny z minulosti a strach z budoucnosti. Toto vnitřní nastavení mě dovedlo až na hranici možností mého těla.
+    </p>
+    <p>
+      Chyběla mi stabilita a jasnost. V roli „hodného kluka“ pro všechny jsem se potácel životem od zdi ke zdi, až jsem kolem čtyřicátých narozenin dostal silný vzkaz od života skrze nemoc.
+    </p>
+    <p>
+      Pochopil jsem, že pokud nezačnu žít podle sebe, nemusím tu být. Tento zlom se pro mě stal darem. Přinesl mi jednoduchost, vděčnost za obyčejné věci, oslabil velký strach z konečnosti a smrti a dovolil mi znovu začít – ve stejném těle, ale jinak.
+    </p>
+    <p>
+      Učím se dělat věci, tvořit příležitosti a řešit situace nejprve podle sebe, v pocitu odpovědnosti za sebe a svou rodinu. Učím se, co to znamená být muž, partner, otec, syn a bratr. A také sobec, rebel, hlupák, šašek, bojovník i král.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Témata pro setkání, diskuse a akce</h2>
+    <p>
+      Témata nevnímám jako pevně daný seznam. Vždy je pro mě důležité, co je aktuální, živé a skutečně potřebné pro konkrétní skupinu lidí.
+    </p>
+    <p>
+      Nejčastěji se ale dotýkám těchto oblastí:
+    </p>
+    <ul>
+      <li>bezpečí nervového systému a jeho vliv na kvalitu života</li>
+      <li>zpomalení jako kompetence, ne slabost</li>
+      <li>tělo jako kompas a zdroj pravdivých informací</li>
+      <li>pohyb, dech, vibrace a rytmus jako cesta k regulaci</li>
+      <li>vina, tlak, výkon a návrat k vlastnímu směru</li>
+      <li>mužská role, odpovědnost a pravdivost v každodenním životě</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Jak vystupuji</h2>
+    <p>
+      Nejbližší je mi forma diskuse, sdílení a živého setkání. Nerad komukoli tlačím svá moudra.
+    </p>
+    <p>
+      Místo toho nabízím příběh, zkušenost a přítomnost, které mohou otevřít prostor pro to, aby se člověk dotkl vlastní pravdivosti – v bezpečí a bez hodnocení.
+    </p>
+    <p>
+      Vystoupení pro mě není předávání hotových pravd. Je to vytváření pole, ve kterém si lidé mohou odnést něco skutečně svého.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Osobní manifest</h2>
+    <ul class="manifest-list">
+      <li>Věřím, že odpovědi na život už v sobě neseme.</li>
+      <li>Věřím, že bez pocitu bezpečí se skutečná odpověď neotevře.</li>
+      <li>Věřím, že tělo ví dřív než mysl.</li>
+      <li>Věřím, že zpomalení není slabost, ale forma odvahy.</li>
+      <li>Věřím, že regulace nervového systému je základem změny.</li>
+      <li>Věřím, že dobrá práce nevzniká z přetížení, ale z kontaktu.</li>
+      <li>Věřím, že pravdivost roste tam, kde není tlak a hodnocení.</li>
+      <li>Věřím, že člověk se nemusí stát někým jiným. Potřebuje si vzpomenout, kým je.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Kontakt</h2>
+    <p>
+      Pokud tě oslovuje tento styl práce a chceš prozkoumat možnosti spolupráce, ozvi se.
+    </p>
+    <p>
+      Sem si můžeš doplnit:
+    </p>
+    <ul>
+      <li>e-mail</li>
+      <li>telefon (pokud chceš)</li>
+      <li>Instagram / LinkedIn / další odkaz</li>
+      <li>později můžeme přidat i jednoduchý formulář</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Tato stránka je živý prostor. Postupně ji budeme dál kultivovat stejně jako práci, kterou představuje.
+</footer>
+
 <script>
-
 function setEnvironment(type){
-document.body.classList.remove("forest","water","meadow");
-document.body.classList.add(type);
+  document.body.classList.remove("forest","water","meadow");
+  document.body.classList.add(type);
 }
-
 </script>
 
 </body>
