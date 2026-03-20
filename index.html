@@ -3,619 +3,939 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jan Novosad</title>
-  <meta name="description" content="Prostor pro zpomalení, vnímání těla a návrat k sobě. Pohyb, přítomnost, dech, vibrace a bezpečí nervového systému." />
+  <title>Jan Novosad | Odpovědi si neseme v sobě</title>
+  <meta name="description" content="Prostor, kde se tělo může uvolnit a člověk znovu uslyší sebe. Individuální spolupráce, kruhy, sdílení, workshopy a bezpečný prostor pro návrat k sobě." />
+
   <style>
-    :root {
-      --bg-dark: rgba(8, 12, 16, 0.72);
-      --bg-darker: rgba(8, 12, 16, 0.82);
-      --text-main: #f5f1e8;
-      --text-soft: #d9d1c2;
-      --gold: #c5a46d;
-      --gold-soft: rgba(197, 164, 109, 0.25);
-      --line: rgba(255, 255, 255, 0.08);
-      --card: rgba(12, 18, 22, 0.45);
+    :root{
+      --bg:#071017;
+      --bg2:#0b141b;
+      --card:rgba(9,16,23,0.56);
+      --card-border:rgba(214,188,132,0.12);
+      --gold:#d8b77a;
+      --gold-soft:#b9975c;
+      --text:#f5efe4;
+      --muted:#d8d0c2;
+      --soft:#b9b1a4;
+      --line:rgba(216,183,122,0.14);
+      --shadow:0 14px 40px rgba(0,0,0,0.34);
+      --radius:20px;
+      --max:1200px;
     }
 
-    * {
-      box-sizing: border-box;
+    *{ box-sizing:border-box; }
+
+    html{
+      scroll-behavior:smooth;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
+    body{
+      margin:0;
       font-family: Georgia, "Times New Roman", serif;
-      color: var(--text-main);
+      color:var(--text);
       background:
-        linear-gradient(var(--bg-dark), var(--bg-darker)),
+        linear-gradient(rgba(4,10,16,0.74), rgba(4,10,16,0.82)),
         url("background.jpg") center center / cover no-repeat fixed;
-      background-color: #0f1417;
-      line-height: 1.75;
-      letter-spacing: 0.2px;
+      background-color:#05080b;
+      line-height:1.65;
+      overflow-x:hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
       background:
-        radial-gradient(circle at 18% 22%, rgba(197,164,109,0.07), transparent 28%),
-        radial-gradient(circle at 78% 35%, rgba(255,120,60,0.05), transparent 22%),
-        radial-gradient(circle at 52% 78%, rgba(90,120,150,0.06), transparent 30%);
-      pointer-events: none;
-      z-index: 0;
+        radial-gradient(circle at 18% 18%, rgba(216,183,122,0.06), transparent 24%),
+        radial-gradient(circle at 82% 24%, rgba(88,122,150,0.08), transparent 28%),
+        radial-gradient(circle at 50% 80%, rgba(216,183,122,0.03), transparent 30%);
+      z-index:-1;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    .page {
-      position: relative;
-      z-index: 1;
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px 60px;
+    .hero{
+      min-height:92vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      padding:72px 0 36px;
     }
 
-    .hero-inner {
-      max-width: 900px;
+    .hero-inner{
+      width:min(980px, 100%);
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      font-size: 0.95rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:0.28em;
+      text-transform:uppercase;
+      color:var(--gold);
+      opacity:0.9;
+      margin-bottom:18px;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 7vw, 6rem);
-      font-weight: 700;
-      line-height: 1.05;
-      color: #fff9ef;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    h1{
+      margin:0;
+      font-size:clamp(52px, 9vw, 110px);
+      line-height:0.95;
+      letter-spacing:-0.02em;
+      font-weight:700;
+      text-shadow:0 2px 18px rgba(0,0,0,0.28);
     }
 
-    .subtitle {
-      max-width: 860px;
-      margin: 28px auto 0;
-      font-size: clamp(1.2rem, 2.5vw, 1.9rem);
-      line-height: 1.6;
-      color: var(--text-soft);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    .hero-sub{
+      margin:22px auto 0;
+      max-width:900px;
+      font-size:clamp(24px, 3.3vw, 44px);
+      line-height:1.25;
+      color:var(--text);
+      font-weight:500;
     }
 
-    .hero-actions {
-      margin-top: 38px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
+    .hero-note{
+      margin:22px auto 0;
+      max-width:720px;
+      font-size:15px;
+      color:var(--soft);
+      letter-spacing:0.02em;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: all 0.25s ease;
-      border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(6px);
+    .hero-actions{
+      margin-top:34px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
-    .btn-primary {
-      background: rgba(197, 164, 109, 0.16);
-      color: #fff7e8;
-      border-color: rgba(197, 164, 109, 0.45);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 24px;
+      border-radius:999px;
+      border:1px solid rgba(216,183,122,0.22);
+      font-size:15px;
+      font-weight:600;
+      transition:all .28s ease;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: rgba(197, 164, 109, 0.22);
+    .btn-primary{
+      background:rgba(216,183,122,0.12);
+      color:var(--text);
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      color: var(--text-main);
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      background:rgba(216,183,122,0.18);
+      border-color:rgba(216,183,122,0.34);
     }
 
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.1);
+    .btn-secondary{
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
     }
 
-    .scroll-hint {
-      margin-top: 44px;
-      font-size: 0.95rem;
-      color: rgba(245, 241, 232, 0.65);
-      letter-spacing: 1px;
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,0.07);
+      border-color:rgba(255,255,255,0.14);
     }
 
-    .container {
-      width: min(1100px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 0 0 100px;
+    .floating-cta{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1000;
     }
 
-    section {
-      padding: 72px 0;
-      border-top: 1px solid var(--line);
+    .floating-cta .btn{
+      padding:13px 18px;
+      font-size:14px;
+      background:rgba(216,183,122,0.18);
     }
 
-    h2 {
-      margin: 0 0 26px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: #fff8ed;
-      line-height: 1.15;
+    section{
+      padding:34px 0;
     }
 
-    h3 {
-      margin: 0 0 16px;
-      font-size: 1.3rem;
-      color: #f7eddc;
+    .section-shell{
+      padding:34px 0 12px;
+      border-top:1px solid var(--line);
     }
 
-    p {
-      margin: 0 0 18px;
-      font-size: 1.1rem;
-      color: var(--text-soft);
+    .lead-block{
+      max-width:980px;
+      margin:0 auto;
+      text-align:left;
+      padding:24px 0 10px;
     }
 
-    .lead {
-      font-size: 1.25rem;
-      color: #efe7d7;
-      max-width: 900px;
+    .lead-text{
+      font-size:clamp(24px, 3vw, 38px);
+      line-height:1.45;
+      color:var(--text);
+      max-width:980px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 42px;
-      align-items: start;
+    h2{
+      margin:0 0 22px;
+      font-size:clamp(34px, 5vw, 62px);
+      line-height:1.02;
+      letter-spacing:-0.02em;
+      font-weight:700;
+      color:var(--text);
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    h3{
+      margin:0 0 12px;
+      font-size:clamp(20px, 2.3vw, 30px);
+      line-height:1.15;
+      color:var(--text);
     }
 
-    .soft-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 22px;
-      padding: 24px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.16);
+    h4{
+      margin:0 0 10px;
+      font-size:18px;
+      line-height:1.2;
+      color:var(--gold);
+      font-weight:700;
     }
 
-    .soft-card p:last-child,
-    .soft-card ul:last-child {
-      margin-bottom: 0;
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:18px;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--text-soft);
+    .small{
+      font-size:15px;
+      color:var(--soft);
     }
 
-    li {
-      margin-bottom: 10px;
-      font-size: 1.06rem;
+    .grid{
+      display:grid;
+      gap:22px;
     }
 
-    .quote {
-      position: relative;
-      padding: 28px;
-      border-radius: 22px;
-      background: rgba(10, 16, 20, 0.52);
-      border: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(8px);
+    .grid-2{
+      grid-template-columns:1.25fr 0.95fr;
     }
 
-    .quote::before {
-      content: "“";
-      position: absolute;
-      top: 8px;
-      left: 18px;
-      font-size: 4rem;
-      line-height: 1;
-      color: rgba(197,164,109,0.22);
+    .grid-3{
+      grid-template-columns:repeat(3, 1fr);
     }
 
-    .quote p {
-      position: relative;
-      z-index: 1;
-      margin-bottom: 16px;
+    .card{
+      background:linear-gradient(180deg, rgba(10,18,26,0.62), rgba(8,14,20,0.48));
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
     }
 
-    .quote .author {
-      font-size: 0.98rem;
-      color: var(--gold);
-      letter-spacing: 0.4px;
+    .card.soft{
+      background:linear-gradient(180deg, rgba(10,18,26,0.42), rgba(8,14,20,0.28));
     }
 
-    .places {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
+    .story-columns{
+      display:grid;
+      grid-template-columns:1.2fr 0.9fr;
+      gap:22px;
     }
 
-    .pill {
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #f1e8d7;
-      font-size: 0.95rem;
+    .photo-placeholder{
+      min-height:320px;
+      border-radius:20px;
+      border:1px dashed rgba(216,183,122,0.26);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+      background:
+        linear-gradient(180deg, rgba(216,183,122,0.05), rgba(255,255,255,0.02)),
+        rgba(9,16,23,0.35);
+      color:var(--soft);
+      font-size:15px;
     }
 
-    .manifest {
-      font-size: clamp(1.35rem, 2.8vw, 2rem);
-      line-height: 1.7;
-      color: #fff5e5;
-      max-width: 950px;
+    .story-main p{
+      font-size:18px;
     }
 
-    .divider {
-      width: 90px;
-      height: 1px;
-      margin: 24px 0 0;
-      background: linear-gradient(to right, rgba(197,164,109,0), rgba(197,164,109,0.8), rgba(197,164,109,0));
+    .story-side p{
+      font-size:17px;
     }
 
-    .contact-box {
-      text-align: center;
-      padding: 72px 24px;
-      border-radius: 28px;
-      background: rgba(8, 14, 18, 0.55);
-      border: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(8px);
+    .feature-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:10px;
     }
 
-    .contact-box p {
-      max-width: 760px;
-      margin: 0 auto 24px;
+    .feature-list li{
+      position:relative;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:17px;
     }
 
-    .footer {
-      padding: 40px 0 80px;
-      text-align: center;
-      color: rgba(245, 241, 232, 0.55);
-      font-size: 0.95rem;
+    .feature-list li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
     }
 
-    .floating-cta {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 30;
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
     }
 
-    .floating-cta a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 999px;
-      background: rgba(197, 164, 109, 0.2);
-      color: #fff8ed;
-      border: 1px solid rgba(197, 164, 109, 0.45);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
-      font-weight: 600;
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      color:var(--muted);
+      border:1px solid rgba(216,183,122,0.16);
+      background:rgba(255,255,255,0.03);
     }
 
-    .floating-cta a:hover {
-      transform: translateY(-2px);
+    .elements{
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:14px;
     }
 
-    @media (max-width: 900px) {
+    .element{
+      padding:18px 14px;
+      border-radius:18px;
+      border:1px solid rgba(216,183,122,0.12);
+      background:rgba(255,255,255,0.03);
+      text-align:center;
+    }
+
+    .element .symbol{
+      font-size:28px;
+      margin-bottom:8px;
+      display:block;
+    }
+
+    .element strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
+      font-size:16px;
+    }
+
+    .element span{
+      display:block;
+      font-size:13px;
+      color:var(--soft);
+      line-height:1.45;
+    }
+
+    .audio-block{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .audio-atmo{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .audio-lines{
+      display:grid;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .audio-line{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      border-bottom:1px solid rgba(216,183,122,0.08);
+      padding-bottom:8px;
+      font-size:15px;
+      color:var(--muted);
+    }
+
+    .audio-line span:last-child{
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .review{
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .review strong{
+      display:block;
+      margin-top:14px;
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .organizer p{
+      font-size:17px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:22px;
+    }
+
+    .qr-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .qr-box{
+      min-height:180px;
+      border-radius:18px;
+      border:1px dashed rgba(216,183,122,0.2);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:18px;
+      background:rgba(255,255,255,0.02);
+    }
+
+    .qr-box .qr{
+      width:82px;
+      height:82px;
+      border-radius:12px;
+      border:1px dashed rgba(216,183,122,0.22);
+      margin-bottom:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--soft);
+      font-size:12px;
+    }
+
+    .cta-panel{
+      text-align:center;
+      padding:40px 24px;
+    }
+
+    .cta-panel p{
+      max-width:760px;
+      margin:0 auto 14px;
+    }
+
+    footer{
+      padding:26px 0 46px;
+      text-align:center;
+      color:var(--soft);
+      font-size:13px;
+    }
+
+    /* Fade-in on scroll */
+    .reveal{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .9s ease, transform .9s ease;
+      will-change:opacity, transform;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Mobile */
+    @media (max-width: 1080px){
+      .grid-3{ grid-template-columns:1fr; }
       .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr;
+      .story-columns,
+      .audio-block,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+      .elements{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px){
+      body{
+        background:
+          linear-gradient(rgba(4,10,16,0.82), rgba(4,10,16,0.88)),
+          url("background.jpg") center center / cover no-repeat scroll;
       }
 
-      .hero {
-        padding-top: 60px;
+      .hero{
+        min-height:auto;
+        padding:56px 0 24px;
       }
 
-      section {
-        padding: 56px 0;
+      .eyebrow{
+        font-size:11px;
+        letter-spacing:0.18em;
       }
 
-      .subtitle {
-        font-size: 1.15rem;
+      h1{
+        font-size:clamp(42px, 14vw, 72px);
       }
 
-      p, li {
-        font-size: 1rem;
+      .hero-sub{
+        font-size:clamp(21px, 7vw, 34px);
       }
 
-      .floating-cta {
-        right: 14px;
-        left: 14px;
-        bottom: 14px;
+      .lead-text{
+        font-size:clamp(21px, 6.2vw, 30px);
       }
 
-      .floating-cta a {
-        width: 100%;
+      h2{
+        font-size:clamp(30px, 9vw, 48px);
+      }
+
+      p{
+        font-size:17px;
+      }
+
+      .card{
+        padding:20px;
+        border-radius:18px;
+      }
+
+      .elements{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .qr-grid{
+        grid-template-columns:1fr;
+      }
+
+      .floating-cta{
+        right:12px;
+        bottom:12px;
+      }
+
+      .floating-cta .btn{
+        font-size:13px;
+        padding:12px 16px;
+      }
+    }
+
+    @media (max-width: 480px){
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .hero-actions{
+        gap:10px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions .btn{
+        width:auto;
+        min-width:unset;
+      }
+
+      .elements{
+        grid-template-columns:1fr;
+      }
+
+      .photo-placeholder{
+        min-height:220px;
+      }
+
+      .audio-line{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
 
-    <header class="hero" id="top">
-      <div class="hero-inner">
-        <div class="eyebrow">Pohyb • Přítomnost • Bezpečí • Návrat k sobě</div>
-        <h1>Jan Novosad</h1>
-        <p class="subtitle">
-          Odpovědi na život si každý neseme v sobě. Načítají se ale pouze v pocitu bezpečí.
-        </p>
+  <a class="floating-cta" href="#kontakt">
+    <span class="btn btn-primary">Přeji si konzultaci</span>
+  </a>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#kontakt">Přeji si konzultaci</a>
-          <a class="btn btn-secondary" href="#jak-pracuji">Jak pracuji</a>
-        </div>
-
-        <div class="scroll-hint">prostor, kde se tělo může uvolnit a člověk znovu uslyší sebe</div>
+  <header class="hero">
+    <div class="container hero-inner reveal">
+      <div class="eyebrow">Pohyb • Přítomnost • Bezpečí • Návrat k sobě</div>
+      <h1>Jan Novosad</h1>
+      <div class="hero-sub">
+        Odpovědi na život si každý neseme v sobě. Načítají se ale pouze v pocitu bezpečí.
       </div>
-    </header>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">Přeji si konzultaci</a>
+        <a href="#jak-pracuji" class="btn btn-secondary">Jak pracuji</a>
+      </div>
+      <div class="hero-note">
+        prostor, kde se tělo může uvolnit a člověk znovu uslyší sebe
+      </div>
+    </div>
+  </header>
 
-    <main class="container">
+  <main>
 
-      <section id="manifest">
-        <p class="manifest">
-          Jsem ten, který drží prostor, aby se skrze pohyb, zpomalení, naslouchání, práci s emocemi, vibracemi a vnímání sebe mohlo dít uvolnění a bezpečí nervového systému. V takovém nastavení mohou přirozeně probíhat samouzdravné procesy na úrovni těla i duše.
-        </p>
-        <div class="divider"></div>
-      </section>
-
-      <section id="o-mne">
-        <div class="grid-2">
-          <div>
-            <h2>Můj příběh</h2>
-            <p class="lead">
-              Moje cesta vedla od výkonu ke klidu. Od kontroly k důvěře v rytmus. Inspirací je mi příroda, její cykličnost a to, co se otevírá, když člověk přestane tlačit.
-            </p>
-            <p>
-              Jsem muž, partner a otec dvou dcer. Mou životní cestu až do čtyřiceti let doprovázely především pocit viny z minulosti a strach z budoucnosti. Toto vnitřní nastavení mě dovedlo až na hranici možností mého těla.
-            </p>
-            <p>
-              Chyběla mi stabilita a jasnost. V roli „hodného kluka“ pro všechny jsem se potácel životem ode zdi ke zdi. Až kolem čtyřicátých narozenin jsem dostal od života vzkaz skrze nemoc: pokud nezačnu žít podle sebe, nemusím tu být dlouho.
-            </p>
-            <p>
-              Byl to dar, který mi přinesl jednoduchost, vděčnost za obyčejné věci a nový vztah k životu i smrti. Začal jsem znovu – ve stejném těle, ale jinak. Učím se žít v první řadě podle sebe, v odpovědnosti za sebe a svou rodinu.
-            </p>
-            <p>
-              Učím se, co znamená být v tomto světě muž, partner, otec, syn a bratr. A také hajzl, sobec, rebel, hlupák, šašek, bojovník i král.
-            </p>
-          </div>
-
-          <div class="soft-card">
-            <h3>Co mě formuje</h3>
-            <p>
-              Největším hybatelem a inspirací je pro mě má partnerka Gabriela, matka mých dcer. V druhé vlně pak obě naše dcery.
-            </p>
-            <p>
-              Všechny tři jsou pro mě zrcadlem mých pocitů nedostatečnosti, nejasnosti směřování i míst, kde se ještě schovávám. Učím se být vděčný i za surovost a krutost, se kterou mi to někdy život skrze ně ukazuje.
-            </p>
-            <p>
-              Díky nim se potkávám se svými strachy a démony – a právě tím v sobě probouzím odvahu, odpovědnost a opravdovost.
-            </p>
-          </div>
+    <section class="container reveal">
+      <div class="lead-block">
+        <div class="lead-text">
+          Jsem ten, který drží prostor, aby se skrze pohyb, zpomalení, naslouchání, práci s emocemi, vibracemi a vnímání sebe mohlo dít uvolnění a pocit bezpečí nervového systému. V takovém nastavení mohou přirozeně probíhat samouzdravné procesy na úrovni těla i duše.
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="jak-pracuji">
-        <h2>Jak pracuji</h2>
-        <div class="grid-3">
-          <div class="soft-card">
-            <h3>Co přináším</h3>
-            <p>
-              Nedávám hotová řešení. Držím prostor, ve kterém může člověk skrze tělo, dech, pozornost a přítomnost znovu cítit sám sebe.
-            </p>
-            <p>
-              Tam, kde se objeví bezpečí, se často objevuje i uvolnění, jasnost, návrat energie a schopnost slyšet vlastní odpovědi.
-            </p>
-          </div>
+    <section class="container section-shell reveal" id="o-mne">
+      <h2>Můj příběh</h2>
 
-          <div class="soft-card">
-            <h3>Jaké „metody“ používám</h3>
-            <p>
-              Nepoužívám metody v klasickém smyslu. Pracuji skrze přítomnost, intuici, vlastní zkušenosti a zkušenosti klientů.
-            </p>
-            <p>
-              Opírám se o principy, které vnímám jako platné na úrovni naší biomechanické, energetické i duchovní podstaty. Sdílím, nabízím a klient má možnost následovat, zkoumat a ověřovat skrze vlastní zkušenost.
-            </p>
-          </div>
+      <div class="story-columns">
+        <div class="card story-main">
+          <p>Moje cesta vedla od výkonu ke klidu. Od kontroly k důvěře v rytmus. Inspirací je mi příroda, její cykličnost a to, co se otevírá, když člověk přestane tlačit.</p>
 
-          <div class="soft-card">
-            <h3>S čím se u mě lidé potkávají</h3>
-            <ul>
-              <li>pohyb a přirozené zatížení těla</li>
-              <li>uvolnění a práce s dechem</li>
-              <li>naslouchání signálům těla</li>
-              <li>vibrace, rytmus a vnímání emocí</li>
-              <li>zpomalování bez pocitu viny</li>
-              <li>hledání jednoduchosti a pravdivosti</li>
-            </ul>
-          </div>
+          <p>Jsem muž, partner a otec dvou dcer. Mou životní cestu až do 40ti let doprovázely především pocity viny z minulosti a strach z budoucnosti. Toto vnitřní nastavení mě dovedlo až na hranici možností mého těla.</p>
+
+          <p>Chyběla mi stabilita a jasnost. V roli „hodného kluka“ pro všechny jsem se potácel životem ode zdi ke zdi. Až kolem čtyřicítky jsem dostal od života vzkaz skrze nemoc, která změnila způsob, jakým se dívám na tělo, život i odpovědnost.</p>
+
+          <p>Byl to dar, který mi přinesl jednoduchost, vděčnost za obyčejné věci a nový vztah k životu i smrti. Začal jsem znovu — ve stejném těle, ale jinak. Učím se žít v první řadě podle sebe, v odpovědnosti za sebe a svou rodinu.</p>
+
+          <p>Učím se, co znamená být v tomto světě muž, partner, otec, syn a bratr. A také hajzl, sobec, rebel, hlupák, šašek, bojovník i král.</p>
         </div>
-      </section>
 
-      <section id="pro-koho">
-        <div class="grid-2">
-          <div>
-            <h2>Pro koho tu jsem</h2>
-            <p class="lead">
-              Pro ty, kteří chtějí kvalitněji pracovat se svou životní energií, tělem a vnitřním nastavením.
-            </p>
-            <p>
-              Pracuji s lidmi, kteří chtějí cítit sami sebe jasněji, naučit se vnímat signály těla a jednat podle nich – nebo naopak nejednat bez pocitu viny.
-            </p>
-            <p>
-              Často jsou to lidé, kteří už toho hodně zvládli. Fungují. Nesou odpovědnost. Ale někde uvnitř cítí, že jsou odpojení od vlastního rytmu, těla a pravdy.
-            </p>
+        <div class="grid">
+          <div class="card story-side">
+            <h4>Co mě formuje</h4>
+            <p>Největším hybatelem a inspirací je pro mě má partnerka Gabriela, matka mých dcer. V druhé vlně pak obě dcery.</p>
+            <p>Všechny tři jsou pro mě zrcadlem mých pocitů nedostatečnosti, nejasnosti směřování i míst, kde se ještě schovávám. Učím se být vděčný i za syrovost a krutost, se kterou mi to někdy život skrze ně ukazuje.</p>
+            <p>Díky nim se potkávám se svými strachy a démony — a tím v sobě probouzím odvahu, odpovědnost a opravdovost.</p>
           </div>
 
-          <div class="soft-card">
-            <h3>Co se může měnit</h3>
-            <ul>
-              <li>regulace nervového systému</li>
-              <li>hlubší kontakt s tělem</li>
-              <li>větší citlivost k vlastním hranicím</li>
-              <li>jasnější rozhodování</li>
-              <li>více energie bez tlaku na výkon</li>
-              <li>vnitřní stabilita a důvěra</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="zkusenosti">
-        <div class="grid-2">
-          <div>
-            <h2>Zkušenosti a zázemí</h2>
-            <p>
-              Vystudoval jsem FTVS UK, obor trenérství. Po dokončení studia jsem ale začal skutečně studovat to, co mi dávalo smysl, provokovalo mě, doplňovalo prázdná místa v mém chápání a vracelo mě k podstatě.
-            </p>
-            <p>
-              Především z oblasti pohybu, ale také psychosomatiky, reflexní terapie, tradiční čínské medicíny, funkčního tréninku, přirozeného pohybu (MovNat), práce s dechem (Oxygen Advantage), principů a cvičení čchi-kung i šamanského přístupu skrze fyzickou práci, vibrace, zvuk, stravu, rytmus a přírodní medicíny.
-            </p>
-            <p>
-              Všechno se mi to postupně spojuje v jednoduchých principech prostředí, těla, vztahovosti a transparentní kruhové komunikace.
-            </p>
-          </div>
-
-          <div class="soft-card">
-            <h3>Kde působím</h3>
-            <p>
-              Osobně, online i v prostoru, který dává smysl konkrétnímu setkání.
-            </p>
-            <div class="places">
-              <span class="pill">individuální spolupráce</span>
-              <span class="pill">online setkání</span>
-              <span class="pill">venku v přírodě</span>
-              <span class="pill">komorní skupiny</span>
-              <span class="pill">přednášky a sdílení</span>
-              <span class="pill">workshopy na míru</span>
+          <div class="card soft">
+            <h4>Foto blok</h4>
+            <div class="photo-placeholder">
+              Zde může být tvoje fotografie<br><br>
+              (později stačí nahrát soubor např. <strong>jan.jpg</strong><br>
+              a blok snadno vyměníme za reálné foto)
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="reference">
-        <h2>Reference klientů</h2>
-        <div class="grid-2">
-          <div class="quote">
-            <p>
-              Honza Novosad je pro mne unikátní člověk. Je výborný trenér pohybu. Už přes 5 let s ním cvičím a svět se mi zlepšil po všech stránkách. Cítím se výrazně fyzicky lépe. Mám radost z pohybu a jsem daleko více vědomý při něm.
-            </p>
-            <p>
-              Honza je však i skvělý člověk a tak trochu šaman. Když jsme spolu začali cvičit, mluvili jsme primárně o pohybu. Ale když viděl, že mám zájem i o duševní stránku, začali jsme toho probírat více. Debaty s ním mi často pomáhají utřídit myšlenky a i při tréninku dosáhnout lepších výsledků.
-            </p>
-            <p>
-              Cvičím s Honzou dvakrát týdně a jsem ve svých 36 letech nejvíce fit, co jsem kdy byl. Začít cvičit s Honzou bylo jedno z nejlepších životních rozhodnutí, které jsem udělal.
-            </p>
-            <div class="author">Matěj P.</div>
-          </div>
+    <section class="container section-shell reveal" id="jak-pracuji">
+      <h2>Jak pracuji</h2>
 
-          <div class="quote">
-            <p>
-              Honzu jsem oslovila v době, kdy dělal osobního trenéra ve fitku. Líbila se mi pozitivní energie, kterou vyzařuje, a také tolerance, se kterou přijímá moje věčné remcání a skučení.
-            </p>
-            <p>
-              Zvládli jsme spolu Covid, nemoci, stresy a spoustu změn v nás i kolem nás. Z fitka jsme se přesunuli na online a do přírody, od posilování a podrobného plánu k setkáním řízeným aktuální inspirací a pocity.
-            </p>
-            <p>
-              Cíl je stále stejný – budovat a udržovat sílu, výdrž a flexibilitu. Jsem vděčná za motivaci a podporu, které se mi dostává. A posilování mám dneska za odměnu.
-            </p>
-            <div class="author">Ivana V.</div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Co přináším</h4>
+          <p>Neučím hotové návody. Držím prostor, ve kterém může člověk znovu cítit sebe, dech, přirozenost a přítomnost.</p>
+          <p>Jsem ten, kdo se nebojí bezpečí, ale ani pravdy. Věřím, že odpovědi se načítají v uvolnění, jasnosti a ve schopnosti slyšet vlastní tělo.</p>
+        </div>
+
+        <div class="card">
+          <h4>Jaké „metody“ používám</h4>
+          <p>Nepoužívám metody v klasickém smyslu. Pracuji skrze přítomnost, intuici, vlastní zkušenost a zkušenost klientů.</p>
+          <p>Opírám se o principy, které vnímám jako platné na úrovni biomechanické, energetické i duchovní podstaty. Sdílím, nabízím a klient zkoumá skrze vlastní zkušenost.</p>
+        </div>
+
+        <div class="card">
+          <h4>S čím se u mě lidé potkávají</h4>
+          <ul class="feature-list">
+            <li>pohyb a přirozené nastavení těla</li>
+            <li>uvolnění a pocit bezpečí</li>
+            <li>naslouchání signálům těla</li>
+            <li>vibrace, rytmus a vnímání emocí</li>
+            <li>zpomalování bez pocitu viny</li>
+            <li>hledání jednoduchosti a pravdivosti</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-shell reveal" id="pro-koho">
+      <h2>Pro koho tu jsem</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <p>Pro ty, kteří chtějí kvalitněji pracovat se svou životní energií, tělem a vnitřním nastavením.</p>
+          <p>Pro lidi, kteří chtějí cítit sami sebe jasněji, naučit se vnímat signály těla a jednat podle nich — nebo naopak nejednat bez pocitu viny.</p>
+          <p>Často jsou to lidé, kteří už toho hodně zažili. Fungují. Nesou odpovědnost. Ale někde uvnitř cítí, že je čas opřít se o vlastní tělo, sílu a pravdu.</p>
+        </div>
+
+        <div class="card">
+          <h4>Co se může změnit</h4>
+          <ul class="feature-list">
+            <li>regulace nervového systému</li>
+            <li>hlubší kontakt s tělem</li>
+            <li>větší citlivost k vlastním hranicím</li>
+            <li>jasnější rozhodování</li>
+            <li>více energie bez tlaku na výkon</li>
+            <li>vnitřní stabilita a důvěra</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-shell reveal" id="zazemi">
+      <h2>Zkušenosti a zázemí</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <p>Vystudoval jsem FTVS UK, obor trenérství. Po dokončení studia jsem ale začal skutečně studovat to, co mi dávalo smysl, provokovalo mě a doplňovalo prázdná místa v chápání těla i člověka jako celku.</p>
+
+          <p>Především z oblasti pohybu, ale také psychosomatiky, reflexní terapie, tradiční čínské medicíny, funkčního tréninku, přirozeného pohybu (MovNat), práce s dechem (Oxygen Advantage), principů a cvičení čchi-kung, šamanského přístupu skrze fyzickou práci, vibrace, zvuk, stravu, rytmus a přírodní medicíny.</p>
+
+          <p>Všechno se mi to postupně spojuje v jednoduchých a přirozených principech, které se potkávají v transparentní kruhové komunikaci.</p>
+        </div>
+
+        <div class="card">
+          <h4>Kde a jak působím</h4>
+          <p>Osobně Praha a okolí, online i v prostoru, který dává smysl konkrétnímu setkání.</p>
+
+          <div class="pill-wrap">
+            <span class="pill">individuální spolupráce</span>
+            <span class="pill">online setkání</span>
+            <span class="pill">venku v přírodě</span>
+            <span class="pill">přednášky a sdílení</span>
+            <span class="pill">workshopy na míru</span>
+            <span class="pill">mužsko-ženské kruhy</span>
+            <span class="pill">kruhy pro dospívající</span>
+            <span class="pill">smíšené kruhy</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="pro-poradatele">
-        <div class="grid-2">
-          <div>
-            <h2>O mně pro pořadatele</h2>
-            <p class="lead">
-              Nechodím lidem říkat, jak mají žít. Vstupuji do prostoru jako člověk, který sdílí vlastní zkušenost a otevírá možnost, aby se druzí mohli bezpečně dotknout té své.
-            </p>
-            <p>
-              Nejlépe se cítím ve formátu diskuse, sdílení a živého kontaktu. Nerad tlačím „moudra“. Zajímá mě opravdovost, konkrétnost a prostor, kde může zaznít to, co je skutečně živé.
-            </p>
+    <section class="container section-shell reveal" id="elementy">
+      <h2>Pět elementů</h2>
+
+      <div class="card">
+        <p class="small" style="margin-bottom:18px;">Příroda pro mě není dekorace. Je jazyk. V těle i v životě se stále potkáváme s rytmem, cyklem, tlakem, tokem, stabilitou i proměnou.</p>
+
+        <div class="elements">
+          <div class="element">
+            <span class="symbol">🌿</span>
+            <strong>Dřevo</strong>
+            <span>směr, růst, tah vpřed, rozhodnutí</span>
           </div>
-
-          <div class="soft-card">
-            <h3>Témata a formáty</h3>
-            <ul>
-              <li>témata podle aktuální potřeby pořadatele nebo skupiny</li>
-              <li>diskuse a sdílení zkušeností</li>
-              <li>komorní besedy</li>
-              <li>prožitkové vstupy skrze tělo a dech</li>
-              <li>přednášky s přesahem do praxe</li>
-              <li>možnost doplnit později o fotografii a krátký medailonek</li>
-            </ul>
+          <div class="element">
+            <span class="symbol">🔥</span>
+            <strong>Oheň</strong>
+            <span>život, síla, odvaha, vnitřní plamen</span>
           </div>
-        </div>
-      </section>
-
-      <section id="kontakt">
-        <div class="contact-box">
-          <h2>Přeji si konzultaci</h2>
-          <p>
-            Pokud cítíš, že je čas zpomalit, znovu se spojit se svým tělem a vytvořit prostor, kde se mohou začít objevovat vlastní odpovědi, napiš mi.
-          </p>
-          <p>
-            Nejlépe funguje krátká úvodní zpráva o tom, co teď řešíš a proč tě moje práce oslovila.
-          </p>
-
-          <!-- ZMĚŇ SI KONTAKT NÍŽE -->
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:tvuj@email.cz">Napsat e-mail</a>
-            <a class="btn btn-secondary" href="tel:+420123456789">Zavolat</a>
+          <div class="element">
+            <span class="symbol">🪨</span>
+            <strong>Země</strong>
+            <span>střed, výživa, opora, ukotvení</span>
+          </div>
+          <div class="element">
+            <span class="symbol">⚙️</span>
+            <strong>Kov</strong>
+            <span>jasnost, hranice, řád, přesnost</span>
+          </div>
+          <div class="element">
+            <span class="symbol">💧</span>
+            <strong>Voda</strong>
+            <span>tok, klid, hloubka, důvěra</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </main>
+    <section class="container section-shell reveal" id="audio">
+      <h2>Zvuk a atmosféra</h2>
 
-    <div class="footer">
-      © <span id="year"></span> Jan Novosad · Prostor pro návrat k sobě
-    </div>
+      <div class="audio-block">
+        <div class="card">
+          <p>Zvuk pro mě není kulisa. Je to způsob, jak tělo a nervový systém poznávají, že se mohou uvolnit, zpozornět nebo znovu cítit prostor.</p>
+          <p>Ve své práci někdy pracuji i s atmosférou, rytmem, vibrací a přirozenými zvuky, které člověka vrací blíž k sobě a k vnímání.</p>
 
-    <div class="floating-cta">
-      <a href="#kontakt">Přeji si konzultaci</a>
-    </div>
+          <div class="audio-lines">
+            <div class="audio-line"><span>vlčí vytí</span><span>hloubka / instinkt</span></div>
+            <div class="audio-line"><span>zvuk orla</span><span>nadhled / bdělost</span></div>
+            <div class="audio-line"><span>pohyb koně</span><span>síla / rytmus</span></div>
+            <div class="audio-line"><span>dech a ticho</span><span>návrat / regulace</span></div>
+            <div class="audio-line"><span>voda a proud</span><span>uvolnění / tok</span></div>
+            <div class="audio-line"><span>oheň a praskání</span><span>teplo / přítomnost</span></div>
+          </div>
+        </div>
 
-  </div>
+        <div class="card audio-atmo">
+          <h4>Zvukové podbarvení</h4>
+          <p class="small">Tuto sekci lze později rozšířit o reálné audio přehrávače nebo ambientní podkres pro online prezentace, pozvánky nebo kruhy.</p>
+          <p class="small">Pokud budeš chtít, uděláme v další verzi i skutečný audio modul s nahrávkou.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-shell reveal" id="reference">
+      <h2>Reference klientů</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="review">
+            Honza Novosad je pro mne unikátní člověk. Je výborný trenér pohybu. Už přes 5 let s ním cvičím a svět se mi zlepšil po všech stránkách. Cítím se výrazně fyzicky lépe. Mám radost z pohybu a jsem daleko více vědomý při něm.<br><br>
+
+            Cvičíme vlastním tělem, uvolňujeme tělo, používáme TRX i venkovní posilovnu. Honza je však i skvělý člověk a tak trochu šaman. Když viděl, že mám zájem i o duševní stránku, začali jsme toho probírat více. Debaty s ním mi často pomáhají utřídit myšlenky a i při tréninku dosáhnout lepších výsledků.<br><br>
+
+            Cvičím s Honzou dvakrát týdně a jsem ve svých 36 letech nejvíce fit, co jsem kdy byl. Začít s ním cvičit bylo jedno z nejlepších životních rozhodnutí, které jsem udělal.
+            <strong>Matěj P.</strong>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="review">
+            Honzu jsem oslovila v době, kdy dělal osobního trenéra ve fitku. Líbila se mi pozitivní energie, kterou vyzařuje, a také tolerance, se kterou přijímá moje věčné remcání a skučení.<br><br>
+
+            Zvládli jsme spolu Covid, nemoci, stresy a spoustu změn v nás i kolem nás. Z fitka jsme se přesunuli na online a do přírody, od posilování a podrobného tréninkového plánu k setkáním řídícím se aktuální inspirací a pocity.<br><br>
+
+            Cíl je stále stejný: budovat a udržovat sílu, výdrž a flexibilitu. Jsem vděčná za motivaci a podporu, které se mi dostává. A posilování mám dneska za odměnu.
+            <strong>Ivana V.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-shell reveal" id="poradatele">
+      <h2>O mně pro pořadatele</h2>
+
+      <div class="grid grid-2">
+        <div class="card organizer">
+          <p>Nechodím lidem říkat, jak mají žít. Vstupuji do prostoru jako člověk, který sdílí vlastní zkušenost a otevírá možnost, aby se v druhém mohl bezpečně dotknout něčeho vlastního.</p>
+
+          <p>Nejlépe se cítím ve formátu diskuse, sdílení a živého kontaktu. Nerad tlačím „moudra“. Zajímá mě opravdovost, konkrétnost a prostor, kde může zaznít to, co je skutečně živé.</p>
+
+          <p>Mohu vstupovat do komorních kruhů, workshopů, diskusí, přednášek i setkání, kde je potřeba propojit tělo, příběh, přítomnost a jednoduchost.</p>
+        </div>
+
+        <div class="card">
+          <h4>Témata a formáty</h4>
+          <ul class="feature-list">
+            <li>návrat pod vlastní povrch</li>
+            <li>pohyb jako cesta k sobě</li>
+            <li>bezpečí nervového systému</li>
+            <li>práce s tělem a dechem</li>
+            <li>mužství, partnerství, odpovědnost</li>
+            <li>diskuse a sdílené kruhy</li>
+            <li>komorní besedy</li>
+            <li>workshopy na míru</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-shell reveal" id="sheets">
+      <h2>Speaking one-sheet</h2>
+
+      <div class="card">
+        <p><strong>Krátký profil:</strong> Jan Novosad propojuje pohyb, přítomnost, práci s nervovým systémem, rytmem a tělesným vnímáním. Vytváří prostor, kde se člověk může skrze zpomalení a bezpečí znovu potkat s vlastní pravdivostí.</p>
+
+        <p><strong>Formát:</strong> diskuse, sdílení, komorní přednáška, workshop na míru, kruh.</p>
+
+        <p><strong>Vhodné pro:</strong> komunitní akce, firemní wellbeing, menší festivaly, rozvojové akce, kruhy, workshopy, školy, rodičovská a mužská témata.</p>
+
+        <p><strong>Technické minimum:</strong> klidný prostor, možnost sedět v kruhu / volně, případně prostor pro lehký pohyb.</p>
+
+        <p class="small">Pokud budeš chtít, v dalším kroku ti z toho udělám i samostatnou 1stránkovou verzi pro pořadatele (čistý one-sheet nebo PDF verzi).</p>
+      </div>
+    </section>
+
+    <section class="container section-shell reveal" id="kontakt">
+      <h2>Přeji si konzultaci</h2>
+
+      <div class="contact-grid">
+        <div class="card cta-panel">
+          <p>Pokud cítíš, že je čas zpomalit, znovu se spojit se svým tělem a vytvořit prostor, kde se mohou začít objevovat vlastní odpovědi, napiš mi.</p>
+          <p>Nejlíp funguje krátká úvodní zpráva o tom, co teď řešíš a proč tě moje práce oslovila.</p>
+
+          <div class="hero-actions" style="margin-top:24px;">
+            <a href="mailto:jan@jan-novosad.cz" class="btn btn-primary">Napsat e-mail</a>
+            <a href="tel:+420000000000" class="btn btn-secondary">Zavolat</a>
+            <a href="https://www.facebook.com/MovebyJohny" target="_blank" class="btn btn-secondary">Osobní Facebook</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4>WhatsApp skupiny (placeholder)</h4>
+          <p class="small">Sem později doplníme QR kódy nebo přímé odkazy do skupin.</p>
+
+          <div class="qr-grid">
+            <div class="qr-box">
+              <div class="qr">QR</div>
+              <strong style="font-size:15px;">Mužsko-ženský kruh</strong>
+            </div>
+            <div class="qr-box">
+              <div class="qr">QR</div>
+              <strong style="font-size:15px;">Pro dospívající chlapce</strong>
+            </div>
+            <div class="qr-box">
+              <div class="qr">QR</div>
+              <strong style="font-size:15px;">Smíšený kruh</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    © 2026 Jan Novosad • Prostor pro návrat k sobě
+  </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
