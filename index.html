@@ -28,7 +28,7 @@
       font-family: Georgia, "Times New Roman", serif;
       color:var(--text);
       background:
-        linear-gradient(rgba(5,8,11,0.64), rgba(5,8,11,0.76)),
+        linear-gradient(rgba(5,8,11,0.36), rgba(5,8,11,0.48)),
         url("background.jpg") center center / cover no-repeat fixed;
       background-color:#05080b;
       overflow-x:hidden;
@@ -347,7 +347,6 @@
       border-radius:0 18px 18px 0;
     }
 
-    /* GALERIE */
     .photo-grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -379,12 +378,25 @@
       filter:brightness(1) contrast(1.05);
     }
 
-    /* ELEMENTY */
     .elements-wrap{
       display:grid;
       grid-template-columns:420px 1fr;
       gap:24px;
       align-items:start;
+    }
+
+    .polyvagal-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .polyvagal-card{
+      padding:20px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
     }
 
     .pentagram-card{
@@ -476,7 +488,6 @@
       margin-bottom:8px;
     }
 
-    /* ZVUK */
     .audio-box{
       display:grid;
       grid-template-columns:1fr auto;
@@ -511,7 +522,6 @@
       margin-top:18px;
     }
 
-    /* RECENZE */
     .reviews{
       display:grid;
       grid-template-columns:repeat(2, 1fr);
@@ -566,7 +576,6 @@
       margin:0;
     }
 
-    /* KDE PŮSOBÍM */
     .places{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -574,7 +583,6 @@
       margin-top:18px;
     }
 
-    /* POŘADATELÉ */
     .one-sheet{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -582,7 +590,6 @@
       margin-top:16px;
     }
 
-    /* FORM */
     form{
       display:grid;
       gap:14px;
@@ -634,7 +641,6 @@
       font-size:13px;
     }
 
-    /* FADE */
     .fade-in{
       opacity:0;
       transform:translateY(26px);
@@ -686,7 +692,7 @@
       .topbar-inner{align-items:flex-start;flex-direction:column}
       .nav{justify-content:flex-start}
       .cards{grid-template-columns:repeat(2, 1fr)}
-      .grid-2,.grid-3,.reviews,.places,.one-sheet,.about-wrap{grid-template-columns:1fr}
+      .grid-2,.grid-3,.reviews,.places,.one-sheet,.about-wrap,.polyvagal-grid{grid-template-columns:1fr}
       .hero{min-height:auto;padding-top:26px}
       .hero-panel{padding:30px 18px 20px;border-radius:24px}
       .claim{font-size:clamp(20px, 6vw, 28px)}
@@ -740,7 +746,14 @@
         <h1 class="name">Jan Novosad</h1>
 
         <p class="claim">
-          Odpovědi na život si neseme každý v sobě, ale načítají se pouze v pocitu bezpečí.
+          „Naše regenerační schopnost je spojena s hlubokým klidem.“ – Jaroslav Dušek
+        </p>
+
+        <p class="hero-sub">
+          Možná máš práci, vztah, zdravé tělo. A přesto něco chybí.
+          Volání duše. Pocit, že se tělo snaží říct: zastav se.
+          <br><br>
+          Bezpečí nehledej venku. Najdi ho v sobě.
         </p>
 
         <p class="hero-sub">
@@ -776,7 +789,7 @@
         </div>
 
         <div class="hero-cta">
-          <a class="btn primary" href="#kontakt">Přeji si konzultaci</a>
+          <a class="btn primary" href="#kontakt">Domluvit první setkání (nezávazně)</a>
           <a class="btn" href="#poradatele">Verze pro pořadatele</a>
           <a class="btn" href="https://www.facebook.com/MovebyJohny" target="_blank" rel="noopener noreferrer">Facebook / Move by Johny</a>
         </div>
@@ -784,6 +797,17 @@
     </section>
 
     <section id="omne" class="fade-in">
+      <div class="panel">
+        <p class="lead">
+          I když „všechno funguje“, mnoho lidí v sobě cítí prázdno, únavu nebo tiché volání.
+          Ne proto, že by něco bylo špatně – ale proto, že se ztratilo spojení.
+        </p>
+
+        <p>
+          Skrze vědomý pohyb, jemnost a přítomnost nabízím prostor, kde není třeba výkonu.
+          Jen vnímání. Návrat k sobě skrze tělo, přírodu a rytmus života.
+        </p>
+      </div>
       <div class="panel soft">
         <h2>O mně</h2>
 
@@ -832,6 +856,7 @@
           <div class="service" id="individualni">
             <h3>1. Individuální setkávání</h3>
             <p>Prostor pro zpomalení, pohyb, dech, naslouchání a návrat k sobě.</p>
+            <p class="small">Setkávání mohou probíhat u vás doma, venku v blízkosti vašeho domova nebo práce. Praha a okolí dle domluvy.</p>
             <ul class="clean">
               <li>regulace nervového systému</li>
               <li>uvolnění těla a napětí</li>
@@ -841,9 +866,10 @@
           </div>
 
           <div class="service" id="skupiny">
-            <h3>2. Vedení skupin pohybem</h3>
+            <h3>2. Vedení malých skupin (3–6 osob)</h3>
             <p>Skupinový pohyb jako cesta k přítomnosti, síle, stabilitě, koordinaci a radosti z těla.</p>
             <ul class="clean">
+              <li>malé skupiny 3–6 osob</li>
               <li>skupiny v interiéru i venku</li>
               <li>vlastní tělo, jednoduché pomůcky, TRX</li>
               <li>pohyb jako nástroj sebepoznání</li>
@@ -950,6 +976,29 @@
           </div>
 
           <div class="element-detail" id="elementDetail"></div>
+        </div>
+
+        <div class="polyvagal-grid">
+          <div class="polyvagal-card">
+            <div class="element-kicker">Nervová soustava • ventrální větev</div>
+            <h3>Bezpečí, kontakt, otevřenost</h3>
+            <p class="small"><strong>Když je tělo v bezpečí:</strong> přichází klid, schopnost vnímat, být ve spojení, komunikovat a tvořit.</p>
+            <p class="small"><strong>Jak to podporuji:</strong> zpomalení, dech, kontakt se zemí, rytmus, jemný pohyb, hlas a bezpečný vztahový prostor.</p>
+          </div>
+
+          <div class="polyvagal-card">
+            <div class="element-kicker">Nervová soustava • sympatikus</div>
+            <h3>Aktivace, obrana, výkon</h3>
+            <p class="small"><strong>Když je systém v mobilizaci:</strong> tělo se chystá jednat, bojovat, utéct, zabrat, zvládnout tlak.</p>
+            <p class="small"><strong>Jak s tím pracuji:</strong> vědomé vybití napětí pohybem, návrat k dechu, orientace v prostoru a hledání bezpečné míry intenzity.</p>
+          </div>
+
+          <div class="polyvagal-card">
+            <div class="element-kicker">Nervová soustava • dorzální větev</div>
+            <h3>Stažení, útlum, odpojení</h3>
+            <p class="small"><strong>Když je toho příliš:</strong> tělo může ztuhnout, stáhnout se, ztratit energii, kontakt nebo chuť cokoliv řešit.</p>
+            <p class="small"><strong>Jaký je záměr setkání:</strong> nevytlačit člověka výkonem, ale jemně obnovit pocit bezpečí a postupně vracet život do těla.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1094,7 +1143,6 @@
 
         <div class="grid-2" style="margin-top:16px;">
           <div class="contact-card">
-            <!-- ZMĚŇ TVUJ_KOD na skutečný Formspree kód -->
             <form action="https://formspree.io/f/TVUJ_KOD" method="POST">
               <input type="text" name="name" placeholder="Vaše jméno" required />
               <input type="email" name="email" placeholder="Váš e-mail" required />
@@ -1105,6 +1153,10 @@
 
           <div class="contact-card">
             <h3>Další možnosti spojení</h3>
+            <p class="small">
+              Pracovní e-mail:
+              <a href="mailto:honza@jannovosad.cz">honza@jannovosad.cz</a>
+            </p>
             <p class="small">
               Facebook:
               <a href="https://www.facebook.com/MovebyJohny" target="_blank" rel="noopener noreferrer">Move by Johny</a>
@@ -1139,10 +1191,8 @@
   </audio>
 
   <script>
-    // Rok ve footeru
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Fade-in
     const faders = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1154,7 +1204,6 @@
     }, { threshold: 0.15 });
     faders.forEach(el => observer.observe(el));
 
-    // 5 elementů
     const elementData = {
       wood: {
         text: `
@@ -1233,7 +1282,6 @@
 
     setElement('wood');
 
-    // Audio placeholder
     const audio = document.getElementById('bgAudio');
     const soundBtn = document.getElementById('soundBtn');
     const floatSoundBtn = document.getElementById('floatSoundBtn');
