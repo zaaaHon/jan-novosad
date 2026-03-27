@@ -27,11 +27,12 @@
       color:var(--text);
       background:
         linear-gradient(rgba(7,10,12,0.22), rgba(7,10,12,0.34)),
-        url("background.jpg") center center / cover no-repeat fixed;
+        url("background.jpg") center center / cover no-repeat;
       background-color:#0b1114;
       line-height:1.75;
       letter-spacing:.01em;
       overflow-x:hidden;
+      background-attachment:scroll;
     }
 
     body::before{
@@ -219,10 +220,8 @@
     .rhythm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
     .elements-wrap{display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start}
     .about-wrap{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
-    .invites-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-    .qr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
 
-    .service,.review,.rhythm-card,.polyvagal-card,.contact-card,.sheet-card,.invite-card,.qr-card{
+    .service,.review,.rhythm-card,.polyvagal-card,.contact-card,.sheet-card{
       padding:20px;
       border-radius:20px;
       background:rgba(255,255,255,0.03);
@@ -252,24 +251,11 @@
       margin:0 auto;
     }
 
-    .portrait img,.photo-card img,.avatar img,.invite-card img,.qr-card img,.center-logo img{
+    .portrait img,.photo-card img,.avatar img{
       width:100%;
       height:100%;
       object-fit:cover;
       display:block;
-    }
-
-    .img-fallback{
-      width:100%;
-      height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      color:var(--muted);
-      text-align:center;
-      font-size:15px;
-      line-height:1.6;
     }
 
     .photo-card{
@@ -281,15 +267,13 @@
       box-shadow:0 10px 28px rgba(0,0,0,0.18);
     }
 
-    .photo-card img,
-    .invite-card img{
+    .photo-card img{
       min-height:260px;
       filter:brightness(0.97) contrast(1.02);
       transition:transform .5s ease, filter .5s ease;
     }
 
-    .photo-card:hover img,
-    .invite-card:hover img{
+    .photo-card:hover img{
       transform:scale(1.03);
       filter:brightness(1) contrast(1.05);
     }
@@ -344,29 +328,14 @@
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:18px;
+      padding:20px;
       background:rgba(16,24,29,0.42);
       border:1px solid rgba(214,195,149,0.18);
       box-shadow:0 0 0 10px rgba(214,195,149,0.02), 0 12px 36px rgba(0,0,0,0.16);
+      color:#fffaf0;
+      font-size:17px;
+      line-height:1.35;
       animation:centerBreathe 9s ease-in-out infinite;
-      overflow:hidden;
-    }
-
-    .center-logo{
-      width:100%;
-      height:100%;
-      border-radius:50%;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(255,255,255,0.02);
-    }
-
-    .center-logo img{
-      object-fit:contain;
-      padding:16px;
-      filter:drop-shadow(0 6px 16px rgba(0,0,0,0.28));
     }
 
     @keyframes centerBreathe{
@@ -390,25 +359,23 @@
       color:var(--text);
       animation:floatOrbit 8s ease-in-out infinite;
       transition:.25s ease;
-      --orbit-transform:none;
-      transform:var(--orbit-transform);
     }
 
     .service-orbit:nth-of-type(odd){animation-duration:9.5s}
     .service-orbit:nth-of-type(even){animation-duration:7.8s}
 
     .service-orbit:hover{
-      transform:var(--orbit-transform) translateY(-4px);
+      transform:translateY(-4px);
       border-color:rgba(214,195,149,0.24);
       background:rgba(255,255,255,0.04);
     }
 
     @keyframes floatOrbit{
-      0%,100%{margin-top:0}
-      50%{margin-top:-6px}
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
     }
 
-    .service-orbit.top{left:50%;top:0;--orbit-transform:translateX(-50%)}
+    .service-orbit.top{left:50%;top:0;transform:translateX(-50%)}
     .service-orbit.right{right:22px;top:122px}
     .service-orbit.bottom-right{right:86px;bottom:26px}
     .service-orbit.bottom-left{left:86px;bottom:26px}
@@ -454,15 +421,13 @@
       box-shadow:0 8px 25px rgba(0,0,0,0.28);
       cursor:pointer;
       transition:.3s ease;
-      --node-transform:none;
-      transform:var(--node-transform);
     }
 
-    .node:hover{transform:var(--node-transform) scale(1.05);border-color:rgba(214,195,149,0.32)}
-    .node.active{transform:var(--node-transform) scale(1.03);border-color:rgba(214,195,149,0.5);box-shadow:0 0 0 8px rgba(214,195,149,0.05),0 10px 30px rgba(0,0,0,0.35)}
+    .node:hover{transform:scale(1.05);border-color:rgba(214,195,149,0.32)}
+    .node.active{border-color:rgba(214,195,149,0.5);box-shadow:0 0 0 8px rgba(214,195,149,0.05),0 10px 30px rgba(0,0,0,0.35)}
     .node .emoji{font-size:26px;margin-bottom:6px}
     .node .label{font-size:12px;color:var(--gold);line-height:1.2}
-    .node.wood{left:50%;top:28px;--node-transform:translateX(-50%)}
+    .node.wood{left:50%;top:28px;transform:translateX(-50%)}
     .node.fire{right:48px;top:118px}
     .node.earth{right:90px;bottom:58px}
     .node.metal{left:90px;bottom:58px}
@@ -514,36 +479,6 @@
 
     button.submit:hover{transform:translateY(-2px)}
 
-    .invite-card{
-      padding:0;
-      overflow:hidden;
-      min-height:320px;
-    }
-
-    .invite-card .invite-caption{
-      padding:16px 18px 18px;
-    }
-
-    .invite-image-wrap{
-      min-height:260px;
-      background:rgba(255,255,255,0.04);
-    }
-
-    .qr-card{
-      text-align:center;
-    }
-
-    .qr-card .qr-image{
-      width:100%;
-      max-width:160px;
-      aspect-ratio:1/1;
-      margin:0 auto 12px;
-      border-radius:18px;
-      overflow:hidden;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
     footer{
       margin-top:28px;
       padding:18px 6px 8px;
@@ -591,16 +526,10 @@
     }
 
     @media (max-width:860px){
-      body{
-        background:
-          linear-gradient(rgba(7,10,12,0.22), rgba(7,10,12,0.34)),
-          url("background.jpg") center center / cover no-repeat;
-      }
-
       .topbar-inner{align-items:center;flex-direction:column}
       .nav{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
       .nav a{font-size:12px;text-align:center;padding:8px 4px}
-      .grid-2,.grid-3,.reviews,.one-sheet,.about-wrap,.polyvagal-grid,.photo-grid,.invites-grid,.qr-grid{grid-template-columns:1fr}
+      .grid-2,.grid-3,.reviews,.one-sheet,.about-wrap,.polyvagal-grid,.photo-grid{grid-template-columns:1fr}
       .hero{min-height:auto;padding-top:42px}
       .hero-panel{padding:34px 10px 26px}
       .claim{font-size:clamp(22px,6vw,30px);margin-bottom:28px}
@@ -636,7 +565,7 @@
       .float-actions{right:12px;bottom:12px}
       .float-btn{width:52px;height:52px}
       .services-pentagram-wrap{min-height:400px}
-      .service-center{width:124px;height:124px}
+      .service-center{width:124px;height:124px;font-size:15px}
       .service-orbit{width:118px;min-height:72px;padding:10px 8px}
       .orbit-title{font-size:11px}
       .orbit-sub{font-size:9px}
@@ -647,17 +576,12 @@
       .service-orbit.left{left:-8px;top:120px}
     }
 
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      *,
-      *::before,
-      *::after{
-        animation:none !important;
-        transition:none !important;
-      }
-      .fade-in{
-        opacity:1;
-        transform:none;
+    @media (max-width:860px){
+      body{
+        background-position:center center;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment:scroll;
       }
     }
   </style>
@@ -675,7 +599,6 @@
         <a href="#zvuk">Rytmus</a>
         <a href="#recenze">Recenze</a>
         <a href="#poradatele">Pro pořadatele</a>
-        <a href="#akce">Akce</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
@@ -703,7 +626,7 @@
         </p>
 
         <div class="hero-cta">
-          <a class="btn primary" href="#kontakt">Domluvit úvodní setkání</a>
+          <a class="btn primary" href="#kontakt">Domluvit první setkání (nezávazně)</a>
           <a class="btn" href="#poradatele">Verze pro pořadatele</a>
           <a class="btn" href="https://www.facebook.com/jan.novosad" target="_blank" rel="noopener noreferrer">Facebook / jan.novosad</a>
         </div>
@@ -727,16 +650,7 @@
           <div class="services-line l4"></div>
           <div class="services-line l5"></div>
 
-          <div class="service-center">
-            <div class="center-logo">
-              <img
-                src="logo.png"
-                alt="Logo Jan Novosad"
-                loading="lazy"
-                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj logo jako <strong>logo.png</strong>'}))"
-              />
-            </div>
-          </div>
+          <div class="service-center">Jan<br>Novosad</div>
 
           <a class="service-orbit top" href="#individualni">
             <div class="orbit-title">Individuální setkávání</div>
@@ -782,12 +696,7 @@
         <h2>O mně</h2>
         <div class="about-wrap">
           <div class="portrait">
-            <img
-              src="jan.jpg"
-              alt="Jan Novosad"
-              loading="lazy"
-              onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj svou fotku jako <strong>jan.jpg</strong>'}))"
-            />
+            <img src="jan.jpg" alt="Jan Novosad" onerror="this.outerHTML='<div class=&quot;portrait&quot; style=&quot;display:flex;align-items:center;justify-content:center;padding:24px;color:var(--muted);&quot;>Nahraj svou fotku jako <strong style=&quot;margin-left:6px;&quot;>jan.jpg</strong></div>';">
           </div>
 
           <div>
@@ -891,28 +800,13 @@
 
         <div class="photo-grid">
           <div class="photo-card">
-            <img
-              src="akce1.jpg"
-              alt="Setkání a práce v pohybu"
-              loading="lazy"
-              onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>akce1.jpg</strong>'}))"
-            />
+            <img src="akce1.jpg" alt="Setkání a práce v pohybu" onerror="this.outerHTML='<div class=&quot;photo-card&quot; style=&quot;display:flex;align-items:center;justify-content:center;padding:24px;color:var(--muted);&quot;>Nahraj fotku jako <strong style=&quot;margin-left:6px;&quot;>akce1.jpg</strong></div>';">
           </div>
           <div class="photo-card">
-            <img
-              src="kruh1.jpg"
-              alt="Kruhové sdílení a bezpečný prostor"
-              loading="lazy"
-              onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>kruh1.jpg</strong>'}))"
-            />
+            <img src="kruh1.jpg" alt="Kruhové sdílení a bezpečný prostor" onerror="this.outerHTML='<div class=&quot;photo-card&quot; style=&quot;display:flex;align-items:center;justify-content:center;padding:24px;color:var(--muted);&quot;>Nahraj fotku jako <strong style=&quot;margin-left:6px;&quot;>kruh1.jpg</strong></div>';">
           </div>
           <div class="photo-card">
-            <img
-              src="priroda1.jpg"
-              alt="Pohyb a přítomnost v přírodě"
-              loading="lazy"
-              onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>priroda1.jpg</strong>'}))"
-            />
+            <img src="priroda1.jpg" alt="Pohyb a přítomnost v přírodě" onerror="this.outerHTML='<div class=&quot;photo-card&quot; style=&quot;display:flex;align-items:center;justify-content:center;padding:24px;color:var(--muted);&quot;>Nahraj fotku jako <strong style=&quot;margin-left:6px;&quot;>priroda1.jpg</strong></div>';">
           </div>
         </div>
       </div>
@@ -987,13 +881,12 @@
     <section id="recenze" class="fade-in">
       <div class="panel">
         <h2>Reference klientů</h2>
+        <p class="small">Recenze jsou záměrně menším písmem, aby působily klidněji a nechaly vyniknout celkové struktuře stránky.</p>
 
         <div class="reviews" style="margin-top:18px;">
           <div class="review">
             <div class="review-head">
-              <div class="avatar">
-                <img src="matej.jpg" alt="Matěj P." loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;avatar-fallback&quot;>MP</div>';">
-              </div>
+              <div class="avatar"><img src="matej.jpg" alt="Matěj P." onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;avatar-fallback&quot;>MP</div>'; "></div>
               <div>
                 <p class="review-name">Matěj P.</p>
                 <p class="tiny" style="margin:0;">dlouhodobá individuální spolupráce</p>
@@ -1004,9 +897,7 @@
 
           <div class="review">
             <div class="review-head">
-              <div class="avatar">
-                <img src="ivana.jpg" alt="Ivana V." loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;avatar-fallback&quot;>IV</div>';">
-              </div>
+              <div class="avatar"><img src="ivana.jpg" alt="Ivana V." onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;avatar-fallback&quot;>IV</div>'; "></div>
               <div>
                 <p class="review-name">Ivana V.</p>
                 <p class="tiny" style="margin:0;">individuální / online / příroda</p>
@@ -1060,61 +951,6 @@
       </div>
     </section>
 
-    <section id="akce" class="fade-in">
-      <div class="panel">
-        <h2>Pozvání na akce</h2>
-        <p class="lead">Tady můžeš zobrazit aktuální letáčky na připravované kruhy, setkání a další události.</p>
-        <p class="small">Stačí nahrát obrázky do repozitáře a ponechat jejich názvy podle šablony níže, nebo přepsat hodnoty v <code>src</code>.</p>
-
-        <div class="invites-grid">
-          <div class="invite-card">
-            <div class="invite-image-wrap">
-              <img
-                src="letacek1.jpg"
-                alt="Pozvánka na akci 1"
-                loading="lazy"
-                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj letáček jako <strong>letacek1.jpg</strong>'}))"
-              />
-            </div>
-            <div class="invite-caption">
-              <h3 style="margin-bottom:8px;">Kruh / akce 1</h3>
-              <p class="small" style="margin-bottom:0;">Sem můžeš dopsat krátký text, datum nebo místo konání.</p>
-            </div>
-          </div>
-
-          <div class="invite-card">
-            <div class="invite-image-wrap">
-              <img
-                src="letacek2.jpg"
-                alt="Pozvánka na akci 2"
-                loading="lazy"
-                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj letáček jako <strong>letacek2.jpg</strong>'}))"
-              />
-            </div>
-            <div class="invite-caption">
-              <h3 style="margin-bottom:8px;">Kruh / akce 2</h3>
-              <p class="small" style="margin-bottom:0;">Sem můžeš dopsat krátký text, datum nebo místo konání.</p>
-            </div>
-          </div>
-
-          <div class="invite-card">
-            <div class="invite-image-wrap">
-              <img
-                src="letacek3.jpg"
-                alt="Pozvánka na akci 3"
-                loading="lazy"
-                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj letáček jako <strong>letacek3.jpg</strong>'}))"
-              />
-            </div>
-            <div class="invite-caption">
-              <h3 style="margin-bottom:8px;">Kruh / akce 3</h3>
-              <p class="small" style="margin-bottom:0;">Sem můžeš dopsat krátký text, datum nebo místo konání.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="kontakt" class="fade-in">
       <div class="panel">
         <h2>Kontakt</h2>
@@ -1128,53 +964,20 @@
               <textarea name="message" rows="6" placeholder="Co byste potřebovali / s čím přicházíte?" required></textarea>
               <button class="submit" type="submit">Odeslat zprávu</button>
             </form>
-            <p class="tiny" style="margin-top:12px;">Do adresy formuláře doplň svůj skutečný Formspree kód místo <strong>TVUJ_KOD</strong>.</p>
           </div>
 
           <div class="contact-card">
             <h3>Další možnosti spojení</h3>
-            <p class="small">Pracovní e-mail: <a href="mailto:jan.novosad@seznam.cz">jan.novosad@seznam.cz</a></p>
+            <p class="small">Pracovní e-mail: <a href="mailto:honza@jannovosad.cz">honza@jannovosad.cz</a></p>
             <p class="small">Facebook: <a href="https://www.facebook.com/jan.novosad" target="_blank" rel="noopener noreferrer">jan.novosad</a></p>
 
-            <div class="qr-grid">
-              <div class="qr-card">
-                <div class="qr-image">
-                  <img
-                    src="qr-muzsko-zenske-kruhy.png"
-                    alt="QR kód – mužsko-ženské kruhy"
-                    loading="lazy"
-                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj QR jako <strong>qr-muzsko-zenske-kruhy.png</strong>'}))"
-                  />
-                </div>
-                <p class="tiny" style="margin:0;">mužsko-ženské kruhy</p>
-              </div>
-
-              <div class="qr-card">
-                <div class="qr-image">
-                  <img
-                    src="qr-dospivajici-chlapci.png"
-                    alt="QR kód – dospívající chlapci"
-                    loading="lazy"
-                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj QR jako <strong>qr-dospivajici-chlapci.png</strong>'}))"
-                  />
-                </div>
-                <p class="tiny" style="margin:0;">dospívající chlapci</p>
-              </div>
-
-              <div class="qr-card">
-                <div class="qr-image">
-                  <img
-                    src="qr-smisene-kruhy.png"
-                    alt="QR kód – smíšené kruhy"
-                    loading="lazy"
-                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj QR jako <strong>qr-smisene-kruhy.png</strong>'}))"
-                  />
-                </div>
-                <p class="tiny" style="margin:0;">smíšené kruhy</p>
-              </div>
+            <div class="grid-3" style="margin-top:14px;">
+              <div class="contact-card">QR placeholder<br>mužsko-ženské kruhy</div>
+              <div class="contact-card">QR placeholder<br>dospívající chlapci</div>
+              <div class="contact-card">QR placeholder<br>smíšené kruhy</div>
             </div>
 
-            <p class="tiny" style="margin-top:14px;">QR kódy nahraj jako běžné PNG obrázky. Když budeš chtít, mohu ti hned připravit i verzi, kde se po kliknutí na QR nebo název otevře přímo WhatsApp skupina přes odkaz.</p>
+            <p class="tiny" style="margin-top:14px;">Až budeš mít finální WhatsApp odkazy nebo QR obrázky, vložíme je místo placeholderů.</p>
           </div>
         </div>
       </div>
