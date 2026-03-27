@@ -25,14 +25,15 @@
       margin:0;
       font-family:Georgia,"Times New Roman",serif;
       color:var(--text);
-      background:
-        linear-gradient(rgba(7,10,12,0.22), rgba(7,10,12,0.34)),
-        url("background.jpg") center center / cover no-repeat;
+      background-image:url("background.jpg");
+      background-size:cover;
+      background-position:60% 52%;
+      background-repeat:no-repeat;
       background-color:#0b1114;
       line-height:1.75;
       letter-spacing:.01em;
       overflow-x:hidden;
-      background-attachment:scroll;
+      background-attachment:fixed;
     }
 
     body::before{
@@ -40,10 +41,7 @@
       position:fixed;
       inset:0;
       pointer-events:none;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(214,195,149,0.08), transparent 34%),
-        radial-gradient(circle at 82% 72%, rgba(164,188,205,0.06), transparent 30%);
-      animation:breathe 18s ease-in-out infinite;
+      background:rgba(0,0,0,0.18);
       z-index:0;
     }
 
@@ -578,10 +576,15 @@
 
     @media (max-width:860px){
       body{
-        background-position:center center;
+        background-position:64% 50%;
         background-size:cover;
         background-repeat:no-repeat;
         background-attachment:scroll;
+      }
+
+      body::before{
+        position:absolute;
+        background:rgba(0,0,0,0.14);
       }
     }
   </style>
