@@ -22,17 +22,16 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
 
-    body{
-      margin:0;
-      font-family:Georgia,"Times New Roman",serif;
-      color:var(--text);
-      line-height:1.75;
-      letter-spacing:.01em;
-      overflow-x:hidden;
-      background-color:#0d120f;
-      background-image:
-        linear-gradient(rgba(10,14,12,0.34), rgba(10,14,12,0.48)),
-        url("background.jpg");
+  body{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--text);
+  line-height:1.75;
+  letter-spacing:.01em;
+  overflow-x:hidden;
+  background:linear-gradient(180deg,#141915 0%, #101511 38%, #0c110d 100%);
+  position:relative;
+};
       background-repeat:no-repeat,no-repeat;
       background-position:center top, center top;
       background-size:cover, cover;
@@ -95,7 +94,19 @@
     }
 
     .nav a:hover{background:rgba(255,255,255,0.05)}
-
+.page-bg{
+  position:absolute;
+  inset:0 0 auto 0;
+  height:220vh;
+  z-index:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(10,14,12,0.22), rgba(10,14,12,0.50)),
+    url("background.jpg");
+  background-repeat:no-repeat,no-repeat;
+  background-position:center top, center top;
+  background-size:100% auto, 100% auto;
+}
     .wrap{
       position:relative;
       z-index:1;
@@ -215,6 +226,16 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .flyers-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.flyer-card img{
+  width:100%;
+  border-radius:16px;
+}
     .reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .one-sheet{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:16px}
     .polyvagal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
@@ -535,6 +556,15 @@
     }
 
     @media (max-width:860px){
+        .page-bg{
+    height:185vh;
+    background-image:
+      linear-gradient(rgba(10,14,12,0.18), rgba(10,14,12,0.42)),
+      url("background.jpg");
+    background-repeat:no-repeat,no-repeat;
+    background-position:center top, center top;
+    background-size:auto 100%, auto 100%;
+  }
       body{
         background-image:
           linear-gradient(rgba(10,14,12,0.24), rgba(10,14,12,0.44)),
@@ -576,6 +606,11 @@
     }
 
     @media (max-width:560px){
+        .page-bg{
+    height:170vh;
+    background-position:center top, 58% top;
+    background-size:auto 100%, auto 100%;
+  }
       .nav{grid-template-columns:repeat(4,1fr);gap:6px}
       .nav a{font-size:11px;line-height:1.25}
       .name{font-size:30px;margin-bottom:20px}
@@ -612,7 +647,7 @@
   </style>
 </head>
 <body>
-
+<div class="page-bg"></div>
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">Jan Novosad</div>
@@ -676,9 +711,8 @@
           <div class="services-line l5"></div>
 
           <div class="service-center">
-            <img
-              src="logo.jpg"
-              alt="Logo Jan Novosad"
+  <img src="logo.jpg">
+</div>
               loading="lazy"
               onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj logo jako <strong>logo.jpg</strong>'}))"
             />
@@ -1004,7 +1038,25 @@
         </div>
       </div>
     </section>
+      <section id="akce">
+  <div class="panel soft">
+    <h2>Pozvání na akce</h2>
 
+    <div class="flyers-grid">
+
+      <div class="flyer-card">
+        <img src="letak-dospivajici.jpg">
+        <h3>Kruhy pro dospívající</h3>
+      </div>
+
+      <div class="flyer-card">
+        <img src="letak-muzi-a-zeny.jpg">
+        <h3>Kruhy pro muže a ženy</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
     <footer>
       © <span id="year"></span> Jan Novosad • pohyb • rytmus • bezpečí • přítomnost
     </footer>
