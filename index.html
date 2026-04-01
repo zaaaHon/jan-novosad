@@ -324,7 +324,11 @@
     }
 
     /* ===== SCHEMA ===== */
-    .schema-panel{overflow:hidden}
+     .schema-panel{
+  overflow:hidden;
+  background:rgba(18,24,20,0.52);
+  backdrop-filter:blur(14px);
+}
     .schema-wrap{width:100%;margin-top:18px}
     .schema-svg{width:100%;height:auto;display:block}
 
@@ -348,13 +352,13 @@
     }
 
     .schema-node rect{
-      stroke-width:1.2;
-      filter:drop-shadow(0 10px 24px rgba(0,0,0,0.18));
-    }
+  stroke-width:1.8;
+  filter:drop-shadow(0 12px 30px rgba(0,0,0,0.26));
+}
 
     .schema-node text{
-      fill:#fffaf2;
-    }
+  fill:#fffaf7;
+}
 
     .schema-info text{
       fill:rgba(247,241,231,0.9);
@@ -364,15 +368,15 @@
       font-size:17px;
     }
 
-    .schema-node-sub{
-      font-size:12px;
-      fill:rgba(255,248,236,0.92);
-    }
+  .schema-node-sub{
+  font-size:12px;
+  fill:rgba(255,248,236,0.96);
+}
 
     .schema-node-meta{
-      font-size:11px;
-      fill:rgba(255,248,236,0.78);
-    }
+  font-size:11px;
+  fill:rgba(255,248,236,0.88);
+}
 
     .schema-info-title{
       font-size:15px;
@@ -385,25 +389,25 @@
     }
 
     .schema-node-wood rect{
-      fill:rgba(121,86,48,0.28);
-      stroke:rgba(173,131,84,0.46);
-    }
-    .schema-node-fire rect{
-      fill:rgba(140,56,46,0.28);
-      stroke:rgba(214,110,92,0.46);
-    }
-    .schema-node-earth rect{
-      fill:rgba(153,132,46,0.28);
-      stroke:rgba(223,197,94,0.46);
-    }
-    .schema-node-water rect{
-      fill:rgba(52,86,128,0.28);
-      stroke:rgba(107,156,214,0.46);
-    }
-    .schema-node-metal rect{
-      fill:rgba(128,128,128,0.22);
-      stroke:rgba(214,214,214,0.42);
-    }
+  fill:rgba(121,86,48,0.46);
+  stroke:rgba(193,151,104,0.72);
+}
+.schema-node-fire rect{
+  fill:rgba(140,56,46,0.46);
+  stroke:rgba(224,130,112,0.72);
+}
+.schema-node-earth rect{
+  fill:rgba(153,132,46,0.46);
+  stroke:rgba(233,207,104,0.72);
+}
+.schema-node-water rect{
+  fill:rgba(52,86,128,0.46);
+  stroke:rgba(127,176,234,0.72);
+}
+.schema-node-metal rect{
+  fill:rgba(148,148,148,0.38);
+  stroke:rgba(230,230,230,0.68);
+}
 
     .schema-node:hover rect{
       transform:translateY(-2px);
