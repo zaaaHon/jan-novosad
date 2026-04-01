@@ -818,66 +818,156 @@ max-width:860px;}
     </section>
 
     <section class="fade-in">
-      <div class="services-map">
-        <div class="services-map-intro">
-          <h2>Mapa mých záměrů a prosředí v rytmu 5 elementů</h2>
-          <p class="small">
-            Nejsem seznam služeb. Z jednoho místa v sobě vstupuji do různých podob setkání podle toho,
-            co je právě potřeba. Každá z nich vede k jiné kvalitě prožitku, ale vyrůstá ze stejného středu.
-          </p>
-        </div>
+  <div class="panel soft schema-panel">
+    <div class="services-map-intro">
+      <h2>Mapa mé práce v rytmu 5 elementů</h2>
+      <p class="small">
+        Jedno centrum, pět forem práce. Každá vyrůstá z jiného kvalitativního pole —
+        z rytmu těla, přírody, emocí, orgánů i nervové soustavy.
+      </p>
+    </div>
 
-        <div class="services-pentagram-wrap">
-          <div class="services-line l1"></div>
-          <div class="services-line l2"></div>
-          <div class="services-line l3"></div>
-          <div class="services-line l4"></div>
-          <div class="services-line l5"></div>
+    <div class="schema-wrap">
+      <svg class="schema-svg" viewBox="0 0 1000 760" role="img" aria-label="Mapa práce Jana Novosada v rytmu pěti elementů">
+        <!-- paprsky -->
+        <line x1="500" y1="380" x2="500" y2="120" class="schema-ray" />
+        <line x1="500" y1="380" x2="735" y2="225" class="schema-ray" />
+        <line x1="500" y1="380" x2="680" y2="620" class="schema-ray" />
+        <line x1="500" y1="380" x2="320" y2="620" class="schema-ray" />
+        <line x1="500" y1="380" x2="265" y2="225" class="schema-ray" />
 
-          <div class="service-center">
-  <img src="logo.jpg">
-</div>
-             
-            />
-          </div>
+        <!-- pomocné dělicí křivky -->
+        <path d="M500 85 Q610 210 735 225" class="schema-arc" />
+        <path d="M760 395 Q720 525 680 620" class="schema-arc" />
+        <path d="M320 620 Q280 530 240 395" class="schema-arc" />
+        <path d="M265 225 Q390 210 500 85" class="schema-arc" />
 
-          <a class="service-orbit top wood" href="#individualni">
-  <div class="orbit-title">Individuální setkávání</div>
-  <div class="orbit-sub">Dřevo • jaro • růst a nový směr</div>
-  <div class="orbit-meta">játra / žlučník • vztek a rozhodnost • 23:00–03:00 • mobilizace a pohyb vpřed</div>
-</a>
-        <a class="service-orbit right fire" href="#skupiny">
-  <div class="orbit-title">Malé skupiny (3–6 lidí)</div>
-  <div class="orbit-sub">Oheň • léto • vztah, radost, sdílení</div>
-  <div class="orbit-meta">srdce / tenké střevo • radost a propojení • 11:00–15:00 • ventrální větev a kontakt</div>
-</a>
+        <!-- střed -->
+        <circle cx="500" cy="380" r="62" class="schema-center-circle" />
+        <image href="logo.jpg" x="442" y="322" width="116" height="116" preserveAspectRatio="xMidYMid slice" clip-path="url(#centerClip)" />
+        <defs>
+          <clipPath id="centerClip">
+            <circle cx="500" cy="380" r="54"></circle>
+          </clipPath>
+        </defs>
 
-          <a class="service-orbit top wood" href="#individualni">
-  <div class="orbit-title">Individuální setkávání</div>
-  <div class="orbit-sub">Dřevo • jaro • růst a nový směr</div>
-  <div class="orbit-meta">játra / žlučník • vztek a rozhodnost • 23:00–03:00 • mobilizace a pohyb vpřed</div>
-</a>
+        <!-- horní uzel -->
+        <a href="#individualni">
+          <g class="schema-node schema-node-wood">
+            <rect x="398" y="42" rx="22" ry="22" width="204" height="108"></rect>
+            <text x="500" y="72" text-anchor="middle" class="schema-node-title">Individuální setkávání</text>
+            <text x="500" y="94" text-anchor="middle" class="schema-node-sub">Dřevo • jaro • růst a směr</text>
+            <text x="500" y="114" text-anchor="middle" class="schema-node-meta">játra / žlučník • rozhodnost</text>
+            <text x="500" y="132" text-anchor="middle" class="schema-node-meta">23:00–03:00 • aktivace</text>
+          </g>
+        </a>
 
-          <a class="service-orbit bottom-right earth" href="#kruhy">
-  <div class="orbit-title">Kruhová komunikace</div>
-  <div class="orbit-sub">Země • pozdní léto • střed a výživa</div>
-  <div class="orbit-meta">slezina / žaludek • péče a ukotvení • 07:00–11:00 • regulace, opora, bezpečí</div>
-</a>
+        <!-- pravý horní uzel -->
+        <a href="#skupiny">
+          <g class="schema-node schema-node-fire">
+            <rect x="744" y="168" rx="22" ry="22" width="204" height="108"></rect>
+            <text x="846" y="198" text-anchor="middle" class="schema-node-title">Malé skupiny (3–6 lidí)</text>
+            <text x="846" y="220" text-anchor="middle" class="schema-node-sub">Oheň • léto • vztah a sdílení</text>
+            <text x="846" y="240" text-anchor="middle" class="schema-node-meta">srdce / tenké střevo • radost</text>
+            <text x="846" y="258" text-anchor="middle" class="schema-node-meta">11:00–15:00 • kontakt</text>
+          </g>
+        </a>
 
-         <a class="service-orbit bottom-left water" href="#tymy">
-  <div class="orbit-title">Sportovní týmy</div>
-  <div class="orbit-sub">Voda • zima • rezerva, hloubka, obnova</div>
-  <div class="orbit-meta">ledviny / močový měchýř • strach a důvěra • 15:00–19:00 • kapacita, odolnost, regenerace</div>
-</a>
+        <!-- pravý dolní uzel -->
+        <a href="#kruhy">
+          <g class="schema-node schema-node-earth">
+            <rect x="696" y="572" rx="22" ry="22" width="204" height="108"></rect>
+            <text x="798" y="602" text-anchor="middle" class="schema-node-title">Kruhová komunikace</text>
+            <text x="798" y="624" text-anchor="middle" class="schema-node-sub">Země • střed • ukotvení</text>
+            <text x="798" y="644" text-anchor="middle" class="schema-node-meta">slezina / žaludek • péče</text>
+            <text x="798" y="662" text-anchor="middle" class="schema-node-meta">07:00–11:00 • regulace</text>
+          </g>
+        </a>
 
-         <a class="service-orbit left metal" href="#prednasky">
-  <div class="orbit-title">Interaktivní přednášky</div>
-  <div class="orbit-sub">Kov • podzim • jasnost, hranice, smysl</div>
-  <div class="orbit-meta">plíce / tlusté střevo • smutek a uvolnění • 03:00–07:00 • dech, orientace, struktura</div>
-</a>
-        </div>
-      </div>
-    </section>
+        <!-- levý dolní uzel -->
+        <a href="#tymy">
+          <g class="schema-node schema-node-water">
+            <rect x="100" y="572" rx="22" ry="22" width="204" height="108"></rect>
+            <text x="202" y="602" text-anchor="middle" class="schema-node-title">Sportovní týmy</text>
+            <text x="202" y="624" text-anchor="middle" class="schema-node-sub">Voda • zima • obnova</text>
+            <text x="202" y="644" text-anchor="middle" class="schema-node-meta">ledviny / močový měchýř • důvěra</text>
+            <text x="202" y="662" text-anchor="middle" class="schema-node-meta">15:00–19:00 • kapacita</text>
+          </g>
+        </a>
+
+        <!-- levý horní uzel -->
+        <a href="#prednasky">
+          <g class="schema-node schema-node-metal">
+            <rect x="52" y="168" rx="22" ry="22" width="204" height="108"></rect>
+            <text x="154" y="198" text-anchor="middle" class="schema-node-title">Interaktivní přednášky</text>
+            <text x="154" y="220" text-anchor="middle" class="schema-node-sub">Kov • podzim • jasnost</text>
+            <text x="154" y="240" text-anchor="middle" class="schema-node-meta">plíce / tlusté střevo • uvolnění</text>
+            <text x="154" y="258" text-anchor="middle" class="schema-node-meta">03:00–07:00 • dech</text>
+          </g>
+        </a>
+
+        <!-- informační sektory -->
+        <g class="schema-info">
+          <text x="500" y="210" text-anchor="middle" class="schema-info-title">Pohyb vpřed</text>
+          <text x="500" y="232" text-anchor="middle" class="schema-info-line">směr • impulz • rozhodnutí</text>
+          <text x="500" y="252" text-anchor="middle" class="schema-info-line">mobilizace • změna • růst</text>
+        </g>
+
+        <g class="schema-info">
+          <text x="705" y="340" text-anchor="middle" class="schema-info-title">Kontakt a sdílení</text>
+          <text x="705" y="362" text-anchor="middle" class="schema-info-line">radost • vztah • otevřenost</text>
+          <text x="705" y="382" text-anchor="middle" class="schema-info-line">ventrální větev • propojení</text>
+        </g>
+
+        <g class="schema-info">
+          <text x="650" y="520" text-anchor="middle" class="schema-info-title">Bezpečí a opora</text>
+          <text x="650" y="542" text-anchor="middle" class="schema-info-line">střed • výživa • péče</text>
+          <text x="650" y="562" text-anchor="middle" class="schema-info-line">ukotvení • regulace</text>
+        </g>
+
+        <g class="schema-info">
+          <text x="350" y="520" text-anchor="middle" class="schema-info-title">Obnova a kapacita</text>
+          <text x="350" y="542" text-anchor="middle" class="schema-info-line">rezerva • důvěra • hloubka</text>
+          <text x="350" y="562" text-anchor="middle" class="schema-info-line">regenerace • odolnost</text>
+        </g>
+
+        <g class="schema-info">
+          <text x="295" y="340" text-anchor="middle" class="schema-info-title">Jasnost a orientace</text>
+          <text x="295" y="362" text-anchor="middle" class="schema-info-line">dech • struktura • smysl</text>
+          <text x="295" y="382" text-anchor="middle" class="schema-info-line">hranice • uvolnění</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="schema-mobile-list">
+      <a class="schema-mobile-card wood" href="#individualni">
+        <strong>Individuální setkávání</strong>
+        <span>Dřevo • jaro • růst a směr</span>
+        <small>játra / žlučník • rozhodnost • aktivace</small>
+      </a>
+      <a class="schema-mobile-card fire" href="#skupiny">
+        <strong>Malé skupiny (3–6 lidí)</strong>
+        <span>Oheň • léto • vztah a sdílení</span>
+        <small>srdce / tenké střevo • radost • kontakt</small>
+      </a>
+      <a class="schema-mobile-card earth" href="#kruhy">
+        <strong>Kruhová komunikace</strong>
+        <span>Země • střed • ukotvení</span>
+        <small>slezina / žaludek • péče • regulace</small>
+      </a>
+      <a class="schema-mobile-card water" href="#tymy">
+        <strong>Sportovní týmy</strong>
+        <span>Voda • zima • obnova</span>
+        <small>ledviny / močový měchýř • důvěra • kapacita</small>
+      </a>
+      <a class="schema-mobile-card metal" href="#prednasky">
+        <strong>Interaktivní přednášky</strong>
+        <span>Kov • podzim • jasnost</span>
+        <small>plíce / tlusté střevo • dech • smysl</small>
+      </a>
+    </div>
+  </div>
+</section>
 
     <section id="omne" class="fade-in">
       <div class="panel" style="margin-bottom:18px;">
