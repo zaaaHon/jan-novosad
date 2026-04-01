@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jan Novosad</title>
-  <meta name="description" content="Jan Novosad — pohyb, bezpečí nervového systému, kruhová komunikace, individuální setkání, skupiny a přednášky." />
+  <meta name="description" content="Jan Novosad — pohyb, bezpečí nervového systému, rytmus, kruhová komunikace, individuální setkání, skupiny a přednášky." />
 
   <style>
     :root{
       --text:#f7f1e7;
       --muted:#d8ccb4;
       --gold:#d6c395;
-      --line:rgba(214,195,149,0.18);
       --panel:rgba(10,14,12,0.52);
       --panel-soft:rgba(12,18,15,0.46);
       --shadow:0 20px 50px rgba(0,0,0,0.22);
@@ -22,20 +21,29 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
 
-  body{
-  margin:0;
-  font-family:Georgia,"Times New Roman",serif;
-  color:var(--text);
-  line-height:1.75;
-  letter-spacing:.01em;
-  overflow-x:hidden;
-  background:linear-gradient(180deg,#141915 0%, #101511 38%, #0c110d 100%);
-  position:relative;
-};
+    body{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--text);
+      line-height:1.75;
+      letter-spacing:.01em;
+      overflow-x:hidden;
+      background:linear-gradient(180deg,#141915 0%, #101511 38%, #0c110d 100%);
+      position:relative;
+    }
+
+    .page-bg{
+      position:absolute;
+      inset:0 0 auto 0;
+      height:240vh;
+      z-index:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(10,14,12,0.24), rgba(10,14,12,0.54)),
+        url("background.jpg");
       background-repeat:no-repeat,no-repeat;
       background-position:center top, center top;
-      background-size:cover, cover;
-      background-attachment:scroll, scroll;
+      background-size:100% auto, 100% auto;
     }
 
     body::before{
@@ -44,13 +52,13 @@
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 20% 18%, rgba(255,244,210,0.06), transparent 30%),
-        radial-gradient(circle at 82% 72%, rgba(214,195,149,0.06), transparent 26%);
+        radial-gradient(circle at 20% 18%, rgba(255,244,210,0.05), transparent 30%),
+        radial-gradient(circle at 82% 72%, rgba(214,195,149,0.05), transparent 26%);
       z-index:0;
     }
 
     a{color:var(--gold);text-decoration:none}
-    a:hover{opacity:.92}
+    a:hover{opacity:.94}
 
     .topbar{
       position:sticky;
@@ -94,19 +102,7 @@
     }
 
     .nav a:hover{background:rgba(255,255,255,0.05)}
-.page-bg{
-  position:absolute;
-  inset:0 0 auto 0;
-  height:220vh;
-  z-index:0;
-  pointer-events:none;
-  background-image:
-    linear-gradient(rgba(10,14,12,0.22), rgba(10,14,12,0.50)),
-    url("background.jpg");
-  background-repeat:no-repeat,no-repeat;
-  background-position:center top, center top;
-  background-size:100% auto, 100% auto;
-}
+
     .wrap{
       position:relative;
       z-index:1;
@@ -116,10 +112,10 @@
     }
 
     .hero{
-      min-height:92vh;
+      min-height:90vh;
       display:flex;
       align-items:center;
-      padding:42px 0 18px;
+      padding:40px 0 18px;
     }
 
     .hero-panel{
@@ -140,22 +136,32 @@
 
     .claim{
       text-align:center;
-      margin:0 auto 34px;
-      max-width:960px;
-      font-size:clamp(24px,3.2vw,39px);
-      line-height:1.52;
+      margin:0 auto 28px;
+      max-width:900px;
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.42;
       color:#fffaf3;
       text-shadow:0 2px 20px rgba(0,0,0,0.36);
     }
 
     .hero-sub{
       text-align:center;
-      margin:0 auto 38px;
-      max-width:820px;
+      margin:0 auto 24px;
+      max-width:840px;
       font-size:clamp(16px,2vw,19px);
-      line-height:1.95;
+      line-height:1.9;
       color:rgba(255,248,236,0.98);
       text-shadow:0 2px 14px rgba(0,0,0,0.32);
+    }
+
+    .hero-micro{
+      text-align:center;
+      margin:0 auto 34px;
+      max-width:760px;
+      font-size:15px;
+      color:rgba(255,248,236,0.84);
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     .hero-cta{
@@ -226,24 +232,14 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
-    .flyers-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-
-.flyer-card img{
-  width:100%;
-  border-radius:16px;
-}
     .reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .one-sheet{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:16px}
     .polyvagal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
     .rhythm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-    .elements-wrap{display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start}
     .about-wrap{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
+    .flyers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
 
-    .service,.review,.rhythm-card,.polyvagal-card,.contact-card,.sheet-card{
+    .service,.review,.rhythm-card,.polyvagal-card,.contact-card,.sheet-card,.flyer-card{
       padding:20px;
       border-radius:20px;
       background:rgba(255,255,255,0.035);
@@ -254,8 +250,8 @@
     ul.clean li{margin-bottom:8px;font-size:16px;color:rgba(247,241,231,0.9)}
 
     .quote-box{
-      margin-top:18px;
-      padding:18px 18px 16px;
+      margin:18px 0;
+      padding:16px 18px 14px;
       border-left:2px solid rgba(214,195,149,0.34);
       background:rgba(255,255,255,0.025);
       border-radius:0 18px 18px 0;
@@ -273,7 +269,7 @@
       margin:0 auto;
     }
 
-    .portrait img,.photo-card img,.avatar img,.service-center img{
+    .portrait img,.photo-card img,.avatar img,.flyer-image img{
       width:100%;
       height:100%;
       object-fit:cover;
@@ -313,227 +309,146 @@
       filter:brightness(1) contrast(1.05);
     }
 
-    .services-map{
-      margin-top:6px;
-      padding:6px 0 12px;
-      background:transparent;
-    }
-
-    .services-map-intro{
-      text-align:center;
-      max-width:760px;
-      margin:0 auto 22px;
-      padding:0 18px;
-    }
-
-    .services-pentagram-wrap{
-     .services-pentagram-wrap{
-  position:relative;
-  min-height:760px;
-  max-width:1100px;
-  margin:20px auto 0;
-    }
-
-    .services-line{
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform-origin:left center;
-      height:1px;
-      width:260px;
-      background:linear-gradient(90deg, rgba(214,195,149,0.45), rgba(214,195,149,0.08));
-      opacity:.7;
-      pointer-events:none;
-    }
-
-    .services-line.l1{transform:rotate(-90deg)}
-    .services-line.l2{transform:rotate(-18deg)}
-    .services-line.l3{transform:rotate(54deg)}
-    .services-line.l4{transform:rotate(126deg)}
-    .services-line.l5{transform:rotate(198deg)}
-
-    .service-center{
-      position:absolute;
-      left:50%;
-      top:56%;
-      transform:translate(-50%,-50%);
-      width:150px;
-      height:150px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:8px;
-      background:rgba(14,20,16,0.62);
-      border:1px solid rgba(214,195,149,0.2);
-      box-shadow:0 0 0 10px rgba(214,195,149,0.02), 0 12px 36px rgba(0,0,0,0.18);
+    .flyer-card{
+      padding:0;
       overflow:hidden;
     }
 
-    .service-center img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,0.06);
-    }
-    .service-orbit{
-  position:absolute;
-  width:220px;
-  min-height:148px;
-  padding:18px 18px 16px;
-  border-radius:24px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.14);
-  box-shadow:0 14px 34px rgba(0,0,0,0.18);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  text-align:left;
-  color:var(--text);
-  transition:.28s ease;
-  --orbit-transform:none;
-  transform:var(--orbit-transform);
-  backdrop-filter:blur(8px);
-};
+    .flyer-image{
+      min-height:320px;
+      background:rgba(255,255,255,0.04);
     }
 
-    .service-orbit:hover{
-  transform:var(--orbit-transform) translateY(-6px);
-  border-color:rgba(255,255,255,0.24);
-  box-shadow:0 18px 42px rgba(0,0,0,0.24);
-}
+    .flyer-caption{
+      padding:18px;
     }
 
-    .service-orbit.top{
-  left:50%;
-  top:70px;
-  --orbit-transform:translateX(-50%);
-}
+    /* ===== SCHEMA ===== */
+    .schema-panel{overflow:hidden}
+    .schema-wrap{width:100%;margin-top:18px}
+    .schema-svg{width:100%;height:auto;display:block}
 
-.service-orbit.right{
-  right:36px;
-  top:220px;
-}
-
-.service-orbit.bottom-right{
-  right:110px;
-  bottom:70px;
-}
-
-.service-orbit.bottom-left{
-  left:110px;
-  bottom:70px;
-}
-
-.service-orbit.left{
-  left:36px;
-  top:220px;
-}
-    .service-orbit.wood{
-  background:rgba(120,86,48,0.28);
-  border-color:rgba(173,131,84,0.42);
-}
-
-.service-orbit.water{
-  background:rgba(52,86,128,0.28);
-  border-color:rgba(107,156,214,0.42);
-}
-
-.service-orbit.fire{
-  background:rgba(138,56,46,0.28);
-  border-color:rgba(214,110,92,0.42);
-}
-
-.service-orbit.earth{
-  background:rgba(153,132,46,0.28);
-  border-color:rgba(223,197,94,0.42);
-}
-
-.service-orbit.metal{
-  background:rgba(130,130,130,0.22);
-  border-color:rgba(210,210,210,0.42);
-}
-   .orbit-title{
-  font-size:18px;
-  color:#fffaf2;
-  line-height:1.32;
-  margin-bottom:8px;
-  font-weight:normal;
-}
-    .orbit-sub{
-  font-size:13px;
-  color:rgba(255,248,236,0.92);
-  line-height:1.5;
-  font-style:normal;
-  margin-bottom:8px;
-      }
-.orbit-meta{
-  font-size:11px;
-  color:rgba(255,248,236,0.78);
-  line-height:1.5;
-}
-    .pentagram-card{
-      position:relative;
-      min-height:420px;
-      border-radius:24px;
-      background:radial-gradient(circle at 50% 50%, rgba(214,195,149,0.06), transparent 55%), rgba(255,255,255,0.02);
-      border:1px solid rgba(255,255,255,0.05);
-      overflow:hidden;
+    .schema-ray{
+      stroke:rgba(214,195,149,0.45);
+      stroke-width:2;
+      stroke-linecap:round;
     }
 
-    .pentagram{position:relative;width:100%;height:420px}
+    .schema-arc{
+      fill:none;
+      stroke:rgba(214,195,149,0.18);
+      stroke-width:1.5;
+      stroke-dasharray:7 10;
+    }
 
-    .line{
-      position:absolute;
-      left:50%;
-      top:50%;
+    .schema-center-circle{
+      fill:rgba(12,18,15,0.72);
+      stroke:rgba(214,195,149,0.26);
+      stroke-width:2;
+    }
+
+    .schema-node rect{
+      stroke-width:1.2;
+      filter:drop-shadow(0 10px 24px rgba(0,0,0,0.18));
+    }
+
+    .schema-node text{
+      fill:#fffaf2;
+    }
+
+    .schema-info text{
+      fill:rgba(247,241,231,0.9);
+    }
+
+    .schema-node-title{
+      font-size:17px;
+    }
+
+    .schema-node-sub{
+      font-size:12px;
+      fill:rgba(255,248,236,0.92);
+    }
+
+    .schema-node-meta{
+      font-size:11px;
+      fill:rgba(255,248,236,0.78);
+    }
+
+    .schema-info-title{
+      font-size:15px;
+      fill:#f2e7c8;
+    }
+
+    .schema-info-line{
+      font-size:11px;
+      fill:rgba(247,241,231,0.78);
+    }
+
+    .schema-node-wood rect{
+      fill:rgba(121,86,48,0.28);
+      stroke:rgba(173,131,84,0.46);
+    }
+    .schema-node-fire rect{
+      fill:rgba(140,56,46,0.28);
+      stroke:rgba(214,110,92,0.46);
+    }
+    .schema-node-earth rect{
+      fill:rgba(153,132,46,0.28);
+      stroke:rgba(223,197,94,0.46);
+    }
+    .schema-node-water rect{
+      fill:rgba(52,86,128,0.28);
+      stroke:rgba(107,156,214,0.46);
+    }
+    .schema-node-metal rect{
+      fill:rgba(128,128,128,0.22);
+      stroke:rgba(214,214,214,0.42);
+    }
+
+    .schema-node:hover rect{
+      transform:translateY(-2px);
+      transform-box:fill-box;
       transform-origin:center;
-      background:linear-gradient(90deg, rgba(214,195,149,0.12), rgba(214,195,149,0.5), rgba(214,195,149,0.12));
-      height:2px;
-      border-radius:99px;
     }
 
-    .node{
-      position:absolute;
-      width:92px;
-      min-height:92px;
-      border-radius:50%;
+    .schema-mobile-list{
+      display:none;
+      margin-top:20px;
+      gap:12px;
+    }
+
+    .schema-mobile-card{
       display:flex;
       flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:10px;
-      background:rgba(16,24,20,0.9);
-      border:1px solid rgba(214,195,149,0.18);
-      box-shadow:0 8px 25px rgba(0,0,0,0.28);
-      cursor:pointer;
-      transition:.3s ease;
-      --node-transform:none;
-      transform:var(--node-transform);
+      gap:4px;
+      padding:14px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.04);
+      color:var(--text);
     }
 
-    .node:hover{transform:var(--node-transform) scale(1.05);border-color:rgba(214,195,149,0.32)}
-    .node.active{transform:var(--node-transform) scale(1.03);border-color:rgba(214,195,149,0.5);box-shadow:0 0 0 8px rgba(214,195,149,0.05),0 10px 30px rgba(0,0,0,0.35)}
-    .node .emoji{font-size:26px;margin-bottom:6px}
-    .node .label{font-size:12px;color:var(--gold);line-height:1.2}
-    .node.wood{left:50%;top:28px;--node-transform:translateX(-50%)}
-    .node.fire{right:48px;top:118px}
-    .node.earth{right:90px;bottom:58px}
-    .node.metal{left:90px;bottom:58px}
-    .node.water{left:48px;top:118px}
-
-    .element-detail{
-      min-height:420px;
-      padding:24px;
-      border-radius:24px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.05);
+    .schema-mobile-card strong{
+      font-size:15px;
+      color:#fffaf2;
+      font-weight:normal;
     }
 
-    .element-kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:8px}
+    .schema-mobile-card span{
+      font-size:12px;
+      color:rgba(255,248,236,0.92);
+    }
+
+    .schema-mobile-card small{
+      font-size:11px;
+      color:rgba(255,248,236,0.74);
+    }
+
+    .schema-mobile-card.wood{background:rgba(121,86,48,0.22)}
+    .schema-mobile-card.fire{background:rgba(140,56,46,0.22)}
+    .schema-mobile-card.earth{background:rgba(153,132,46,0.22)}
+    .schema-mobile-card.water{background:rgba(52,86,128,0.22)}
+    .schema-mobile-card.metal{background:rgba(128,128,128,0.18)}
 
     .review-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
     .avatar{width:58px;height:58px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);flex:0 0 auto}
@@ -612,148 +527,51 @@
     .float-btn:hover{transform:scale(1.06)}
 
     @media (max-width:1100px){
-      .elements-wrap{grid-template-columns:1fr}
-      .pentagram-card,.element-detail{min-height:auto}
-      .pentagram{height:390px}
+      .grid-2,.grid-3,.reviews,.one-sheet,.about-wrap,.polyvagal-grid,.photo-grid,.flyers-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:860px){
-        .page-bg{
-    height:185vh;
-    background-image:
-      linear-gradient(rgba(10,14,12,0.18), rgba(10,14,12,0.42)),
-      url("background.jpg");
-    background-repeat:no-repeat,no-repeat;
-    background-position:center top, center top;
-    background-size:auto 100%, auto 100%;
-  }
-      body{
+      .page-bg{
+        height:190vh;
         background-image:
-          linear-gradient(rgba(10,14,12,0.24), rgba(10,14,12,0.44)),
+          linear-gradient(rgba(10,14,12,0.18), rgba(10,14,12,0.46)),
           url("background.jpg");
         background-repeat:no-repeat,no-repeat;
         background-position:center top, center top;
-        background-size:auto, contain;
-        background-attachment:scroll, scroll;
+        background-size:auto 100%, auto 100%;
       }
 
       .topbar-inner{align-items:center;flex-direction:column}
       .nav{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
       .nav a{font-size:12px;text-align:center;padding:8px 4px}
-      .grid-2,.grid-3,.reviews,.one-sheet,.about-wrap,.polyvagal-grid,.photo-grid{grid-template-columns:1fr}
+
       .hero{min-height:auto;padding-top:42px}
       .hero-panel{padding:34px 10px 26px}
-      .claim{font-size:clamp(22px,6vw,30px);margin-bottom:28px}
-      .hero-sub{line-height:1.8;margin-bottom:34px}
+      .claim{font-size:clamp(24px,7vw,34px);margin-bottom:24px}
+      .hero-sub{line-height:1.75;margin-bottom:24px}
       .panel{padding:22px 16px}
-      .pentagram{height:360px}
-      .node{width:78px;min-height:78px;padding:8px}
-      .node .emoji{font-size:22px}
-      .node .label{font-size:11px}
-      .node.fire{right:20px;top:100px}
-      .node.earth{right:52px;bottom:44px}
-      .node.metal{left:52px;bottom:44px}
-      .node.water{left:20px;top:100px}
-      .services-map{padding:18px 8px 8px}
-      .services-pentagram-wrap{min-height:520px;
-max-width:860px;}
-     .service-orbit{
-  width:170px;
-  min-height:126px;
-  padding:12px;
-}
 
-.orbit-title{font-size:14px}
-.orbit-sub{font-size:11px}
-.orbit-meta{font-size:10px}
-
-.service-orbit.top{
-  top:52px;
-}
-
-.service-orbit.right{
-  right:4px;
-  top:186px;
-}
-
-.service-orbit.bottom-right{
-  right:20px;
-  bottom:28px;
-}
-
-.service-orbit.bottom-left{
-  left:20px;
-  bottom:28px;
-}
-
-.service-orbit.left{
-  left:4px;
-  top:186px;
-}
-
-.services-pentagram-wrap{
-  min-height:700px;
-}
+      .schema-wrap{display:none}
+      .schema-mobile-list{display:grid}
+    }
 
     @media (max-width:560px){
-        .page-bg{
-    height:170vh;
-    background-position:center top, 58% top;
-    background-size:auto 100%, auto 100%;
-  }
+      .page-bg{
+        height:175vh;
+        background-position:center top, 58% top;
+        background-size:auto 100%, auto 100%;
+      }
+
       .nav{grid-template-columns:repeat(4,1fr);gap:6px}
       .nav a{font-size:11px;line-height:1.25}
       .name{font-size:30px;margin-bottom:20px}
-      .claim{font-size:24px}
       p{font-size:17px}
       .lead{font-size:18px}
       .float-actions{right:12px;bottom:12px}
       .float-btn{width:52px;height:52px}
-      .services-pentagram-wrap{min-height:400px}
-      .service-center{width:120px;height:120px}
-      .service-orbit{
-  width:150px;
-  min-height:118px;
-  padding:10px;
-}
-
-.orbit-title{font-size:13px}
-.orbit-sub{font-size:10px}
-.orbit-meta{font-size:9px}
-
-.service-orbit.top{
-  top:48px;
-}
-
-.service-orbit.right{
-  right:0;
-  top:180px;
-}
-
-.service-orbit.bottom-right{
-  right:8px;
-  bottom:18px;
-}
-
-.service-orbit.bottom-left{
-  left:8px;
-  bottom:18px;
-}
-
-.service-orbit.left{
-  left:0;
-  top:180px;
-}
-
-.services-pentagram-wrap{
-  min-height:660px;
-}
-
-.service-center{
-  width:110px;
-  height:110px;
-  top:56%;
-}
+    }
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
@@ -768,36 +586,24 @@ max-width:860px;}
         transform:none;
       }
     }
-      .schema-panel{
-  overflow:hidden;
-}
-
-/* ... až po ... */
-
-@media (max-width:860px){
-  .schema-wrap{
-    display:none;
-  }
-
-  .schema-mobile-list{
-    display:grid;
-  }
-}
   </style>
 </head>
 <body>
-<div class="page-bg"></div>
+  <div class="page-bg" aria-hidden="true"></div>
+
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">Jan Novosad</div>
       <nav class="nav">
-        <a href="#spoluprace">Spolupráce</a>
+        <a href="#schema">Mapa práce</a>
         <a href="#omne">O mně</a>
+        <a href="#spoluprace">Spolupráce</a>
         <a href="#galerie">Galerie</a>
         <a href="#elementy">5 elementů</a>
         <a href="#zvuk">Rytmus</a>
-        <a href="#recenze">Recenze</a>
-        <a href="#poradatele">Pro pořadatele</a>
+        <a href="#recenze">Reference</a>
+        <a href="#poradatele">Pořadatelé</a>
+        <a href="#akce">Akce</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
@@ -810,12 +616,6 @@ max-width:860px;}
         <h1 class="name">Jan Novosad</h1>
 
         <p class="claim">
-          Naše schopnost učit se, být výkonný i regenerovat je úzce propojena s hlubokým klidem a bezpečím.
-        </p>
-
-        <p class="hero-sub">
-          Možná máš práci, vztah, zdravé tělo. A přesto něco chybí. Volání duše. Pocit, že se tělo snaží říct: zastav se.
-          <br><br>
           Bezpečí nehledej venku. Najdi ho v sobě.
         </p>
 
@@ -824,206 +624,205 @@ max-width:860px;}
           Tam, kde se nervový systém může uvolnit, se znovu objevuje jasnost, síla, rytmus a přirozená odpověď.
         </p>
 
+        <p class="hero-micro">
+          Zastav se • Vnímej • Dýchej • Buď v těle
+        </p>
+
         <div class="hero-cta">
           <a class="btn primary" href="#kontakt">Domluvit úvodní setkání</a>
-          <a class="btn" href="#poradatele">Verze pro pořadatele</a>
+          <a class="btn" href="#schema">Mapa mé práce</a>
           <a class="btn" href="https://www.facebook.com/jan.novosad" target="_blank" rel="noopener noreferrer">Facebook / jan.novosad</a>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
-  <div class="panel soft schema-panel">
-    <div class="services-map-intro">
-      <h2>Mapa mé práce v rytmu 5 elementů</h2>
-      <p class="small">
-        Jedno centrum, pět forem práce. Každá vyrůstá z jiného kvalitativního pole —
-        z rytmu těla, přírody, emocí, orgánů i nervové soustavy.
-      </p>
-    </div>
+    <section id="schema" class="fade-in">
+      <div class="panel soft schema-panel">
+        <div class="services-map-intro">
+          <h2>Mapa mé práce v rytmu 5 elementů</h2>
+          <p class="small">
+            Jedno centrum, pět forem práce. Každá vyrůstá z jiného kvalitativního pole —
+            z rytmu těla, přírody, emocí, orgánů i nervové soustavy.
+          </p>
+        </div>
 
-    <div class="schema-wrap">
-      <svg class="schema-svg" viewBox="0 0 1000 760" role="img" aria-label="Mapa práce Jana Novosada v rytmu pěti elementů">
-        <!-- paprsky -->
-        <line x1="500" y1="380" x2="500" y2="120" class="schema-ray" />
-        <line x1="500" y1="380" x2="735" y2="225" class="schema-ray" />
-        <line x1="500" y1="380" x2="680" y2="620" class="schema-ray" />
-        <line x1="500" y1="380" x2="320" y2="620" class="schema-ray" />
-        <line x1="500" y1="380" x2="265" y2="225" class="schema-ray" />
+        <div class="schema-wrap">
+          <svg class="schema-svg" viewBox="0 0 1000 760" role="img" aria-label="Mapa práce Jana Novosada v rytmu pěti elementů">
+            <line x1="500" y1="380" x2="500" y2="120" class="schema-ray" />
+            <line x1="500" y1="380" x2="735" y2="225" class="schema-ray" />
+            <line x1="500" y1="380" x2="680" y2="620" class="schema-ray" />
+            <line x1="500" y1="380" x2="320" y2="620" class="schema-ray" />
+            <line x1="500" y1="380" x2="265" y2="225" class="schema-ray" />
 
-        <!-- pomocné dělicí křivky -->
-        <path d="M500 85 Q610 210 735 225" class="schema-arc" />
-        <path d="M760 395 Q720 525 680 620" class="schema-arc" />
-        <path d="M320 620 Q280 530 240 395" class="schema-arc" />
-        <path d="M265 225 Q390 210 500 85" class="schema-arc" />
+            <path d="M500 85 Q610 210 735 225" class="schema-arc" />
+            <path d="M760 395 Q720 525 680 620" class="schema-arc" />
+            <path d="M320 620 Q280 530 240 395" class="schema-arc" />
+            <path d="M265 225 Q390 210 500 85" class="schema-arc" />
 
-        <!-- střed -->
-        <circle cx="500" cy="380" r="62" class="schema-center-circle" />
-        <image href="logo.jpg" x="442" y="322" width="116" height="116" preserveAspectRatio="xMidYMid slice" clip-path="url(#centerClip)" />
-        <defs>
-          <clipPath id="centerClip">
-            <circle cx="500" cy="380" r="54"></circle>
-          </clipPath>
-        </defs>
+            <circle cx="500" cy="380" r="62" class="schema-center-circle" />
+            <image href="logo.jpg" x="442" y="322" width="116" height="116" preserveAspectRatio="xMidYMid slice" clip-path="url(#centerClip)" />
+            <defs>
+              <clipPath id="centerClip">
+                <circle cx="500" cy="380" r="54"></circle>
+              </clipPath>
+            </defs>
 
-        <!-- horní uzel -->
-        <a href="#individualni">
-          <g class="schema-node schema-node-wood">
-            <rect x="398" y="42" rx="22" ry="22" width="204" height="108"></rect>
-            <text x="500" y="72" text-anchor="middle" class="schema-node-title">Individuální setkávání</text>
-            <text x="500" y="94" text-anchor="middle" class="schema-node-sub">Dřevo • jaro • růst a směr</text>
-            <text x="500" y="114" text-anchor="middle" class="schema-node-meta">játra / žlučník • rozhodnost</text>
-            <text x="500" y="132" text-anchor="middle" class="schema-node-meta">23:00–03:00 • aktivace</text>
-          </g>
-        </a>
+            <a href="#individualni">
+              <g class="schema-node schema-node-wood">
+                <rect x="398" y="42" rx="22" ry="22" width="204" height="108"></rect>
+                <text x="500" y="72" text-anchor="middle" class="schema-node-title">Individuální setkávání</text>
+                <text x="500" y="94" text-anchor="middle" class="schema-node-sub">Dřevo • jaro • růst a směr</text>
+                <text x="500" y="114" text-anchor="middle" class="schema-node-meta">játra / žlučník • rozhodnost</text>
+                <text x="500" y="132" text-anchor="middle" class="schema-node-meta">23:00–03:00 • aktivace</text>
+              </g>
+            </a>
 
-        <!-- pravý horní uzel -->
-        <a href="#skupiny">
-          <g class="schema-node schema-node-fire">
-            <rect x="744" y="168" rx="22" ry="22" width="204" height="108"></rect>
-            <text x="846" y="198" text-anchor="middle" class="schema-node-title">Malé skupiny (3–6 lidí)</text>
-            <text x="846" y="220" text-anchor="middle" class="schema-node-sub">Oheň • léto • vztah a sdílení</text>
-            <text x="846" y="240" text-anchor="middle" class="schema-node-meta">srdce / tenké střevo • radost</text>
-            <text x="846" y="258" text-anchor="middle" class="schema-node-meta">11:00–15:00 • kontakt</text>
-          </g>
-        </a>
+            <a href="#skupiny">
+              <g class="schema-node schema-node-fire">
+                <rect x="744" y="168" rx="22" ry="22" width="204" height="108"></rect>
+                <text x="846" y="198" text-anchor="middle" class="schema-node-title">Malé skupiny (3–6 lidí)</text>
+                <text x="846" y="220" text-anchor="middle" class="schema-node-sub">Oheň • léto • vztah a sdílení</text>
+                <text x="846" y="240" text-anchor="middle" class="schema-node-meta">srdce / tenké střevo • radost</text>
+                <text x="846" y="258" text-anchor="middle" class="schema-node-meta">11:00–15:00 • kontakt</text>
+              </g>
+            </a>
 
-        <!-- pravý dolní uzel -->
-        <a href="#kruhy">
-          <g class="schema-node schema-node-earth">
-            <rect x="696" y="572" rx="22" ry="22" width="204" height="108"></rect>
-            <text x="798" y="602" text-anchor="middle" class="schema-node-title">Kruhová komunikace</text>
-            <text x="798" y="624" text-anchor="middle" class="schema-node-sub">Země • střed • ukotvení</text>
-            <text x="798" y="644" text-anchor="middle" class="schema-node-meta">slezina / žaludek • péče</text>
-            <text x="798" y="662" text-anchor="middle" class="schema-node-meta">07:00–11:00 • regulace</text>
-          </g>
-        </a>
+            <a href="#kruhy">
+              <g class="schema-node schema-node-earth">
+                <rect x="696" y="572" rx="22" ry="22" width="204" height="108"></rect>
+                <text x="798" y="602" text-anchor="middle" class="schema-node-title">Kruhová komunikace</text>
+                <text x="798" y="624" text-anchor="middle" class="schema-node-sub">Země • střed • ukotvení</text>
+                <text x="798" y="644" text-anchor="middle" class="schema-node-meta">slezina / žaludek • péče</text>
+                <text x="798" y="662" text-anchor="middle" class="schema-node-meta">07:00–11:00 • regulace</text>
+              </g>
+            </a>
 
-        <!-- levý dolní uzel -->
-        <a href="#tymy">
-          <g class="schema-node schema-node-water">
-            <rect x="100" y="572" rx="22" ry="22" width="204" height="108"></rect>
-            <text x="202" y="602" text-anchor="middle" class="schema-node-title">Sportovní týmy</text>
-            <text x="202" y="624" text-anchor="middle" class="schema-node-sub">Voda • zima • obnova</text>
-            <text x="202" y="644" text-anchor="middle" class="schema-node-meta">ledviny / močový měchýř • důvěra</text>
-            <text x="202" y="662" text-anchor="middle" class="schema-node-meta">15:00–19:00 • kapacita</text>
-          </g>
-        </a>
+            <a href="#tymy">
+              <g class="schema-node schema-node-water">
+                <rect x="100" y="572" rx="22" ry="22" width="204" height="108"></rect>
+                <text x="202" y="602" text-anchor="middle" class="schema-node-title">Sportovní týmy</text>
+                <text x="202" y="624" text-anchor="middle" class="schema-node-sub">Voda • zima • obnova</text>
+                <text x="202" y="644" text-anchor="middle" class="schema-node-meta">ledviny / močový měchýř • důvěra</text>
+                <text x="202" y="662" text-anchor="middle" class="schema-node-meta">15:00–19:00 • kapacita</text>
+              </g>
+            </a>
 
-        <!-- levý horní uzel -->
-        <a href="#prednasky">
-          <g class="schema-node schema-node-metal">
-            <rect x="52" y="168" rx="22" ry="22" width="204" height="108"></rect>
-            <text x="154" y="198" text-anchor="middle" class="schema-node-title">Interaktivní přednášky</text>
-            <text x="154" y="220" text-anchor="middle" class="schema-node-sub">Kov • podzim • jasnost</text>
-            <text x="154" y="240" text-anchor="middle" class="schema-node-meta">plíce / tlusté střevo • uvolnění</text>
-            <text x="154" y="258" text-anchor="middle" class="schema-node-meta">03:00–07:00 • dech</text>
-          </g>
-        </a>
+            <a href="#prednasky">
+              <g class="schema-node schema-node-metal">
+                <rect x="52" y="168" rx="22" ry="22" width="204" height="108"></rect>
+                <text x="154" y="198" text-anchor="middle" class="schema-node-title">Interaktivní přednášky</text>
+                <text x="154" y="220" text-anchor="middle" class="schema-node-sub">Kov • podzim • jasnost</text>
+                <text x="154" y="240" text-anchor="middle" class="schema-node-meta">plíce / tlusté střevo • uvolnění</text>
+                <text x="154" y="258" text-anchor="middle" class="schema-node-meta">03:00–07:00 • dech</text>
+              </g>
+            </a>
 
-        <!-- informační sektory -->
-        <g class="schema-info">
-          <text x="500" y="210" text-anchor="middle" class="schema-info-title">Pohyb vpřed</text>
-          <text x="500" y="232" text-anchor="middle" class="schema-info-line">směr • impulz • rozhodnutí</text>
-          <text x="500" y="252" text-anchor="middle" class="schema-info-line">mobilizace • změna • růst</text>
-        </g>
+            <g class="schema-info">
+              <text x="500" y="210" text-anchor="middle" class="schema-info-title">Pohyb vpřed</text>
+              <text x="500" y="232" text-anchor="middle" class="schema-info-line">směr • impulz • rozhodnutí</text>
+              <text x="500" y="252" text-anchor="middle" class="schema-info-line">mobilizace • změna • růst</text>
+            </g>
 
-        <g class="schema-info">
-          <text x="705" y="340" text-anchor="middle" class="schema-info-title">Kontakt a sdílení</text>
-          <text x="705" y="362" text-anchor="middle" class="schema-info-line">radost • vztah • otevřenost</text>
-          <text x="705" y="382" text-anchor="middle" class="schema-info-line">ventrální větev • propojení</text>
-        </g>
+            <g class="schema-info">
+              <text x="705" y="340" text-anchor="middle" class="schema-info-title">Kontakt a sdílení</text>
+              <text x="705" y="362" text-anchor="middle" class="schema-info-line">radost • vztah • otevřenost</text>
+              <text x="705" y="382" text-anchor="middle" class="schema-info-line">ventrální větev • propojení</text>
+            </g>
 
-        <g class="schema-info">
-          <text x="650" y="520" text-anchor="middle" class="schema-info-title">Bezpečí a opora</text>
-          <text x="650" y="542" text-anchor="middle" class="schema-info-line">střed • výživa • péče</text>
-          <text x="650" y="562" text-anchor="middle" class="schema-info-line">ukotvení • regulace</text>
-        </g>
+            <g class="schema-info">
+              <text x="650" y="520" text-anchor="middle" class="schema-info-title">Bezpečí a opora</text>
+              <text x="650" y="542" text-anchor="middle" class="schema-info-line">střed • výživa • péče</text>
+              <text x="650" y="562" text-anchor="middle" class="schema-info-line">ukotvení • regulace</text>
+            </g>
 
-        <g class="schema-info">
-          <text x="350" y="520" text-anchor="middle" class="schema-info-title">Obnova a kapacita</text>
-          <text x="350" y="542" text-anchor="middle" class="schema-info-line">rezerva • důvěra • hloubka</text>
-          <text x="350" y="562" text-anchor="middle" class="schema-info-line">regenerace • odolnost</text>
-        </g>
+            <g class="schema-info">
+              <text x="350" y="520" text-anchor="middle" class="schema-info-title">Obnova a kapacita</text>
+              <text x="350" y="542" text-anchor="middle" class="schema-info-line">rezerva • důvěra • hloubka</text>
+              <text x="350" y="562" text-anchor="middle" class="schema-info-line">regenerace • odolnost</text>
+            </g>
 
-        <g class="schema-info">
-          <text x="295" y="340" text-anchor="middle" class="schema-info-title">Jasnost a orientace</text>
-          <text x="295" y="362" text-anchor="middle" class="schema-info-line">dech • struktura • smysl</text>
-          <text x="295" y="382" text-anchor="middle" class="schema-info-line">hranice • uvolnění</text>
-        </g>
-      </svg>
-    </div>
+            <g class="schema-info">
+              <text x="295" y="340" text-anchor="middle" class="schema-info-title">Jasnost a orientace</text>
+              <text x="295" y="362" text-anchor="middle" class="schema-info-line">dech • struktura • smysl</text>
+              <text x="295" y="382" text-anchor="middle" class="schema-info-line">hranice • uvolnění</text>
+            </g>
+          </svg>
+        </div>
 
-    <div class="schema-mobile-list">
-      <a class="schema-mobile-card wood" href="#individualni">
-        <strong>Individuální setkávání</strong>
-        <span>Dřevo • jaro • růst a směr</span>
-        <small>játra / žlučník • rozhodnost • aktivace</small>
-      </a>
-      <a class="schema-mobile-card fire" href="#skupiny">
-        <strong>Malé skupiny (3–6 lidí)</strong>
-        <span>Oheň • léto • vztah a sdílení</span>
-        <small>srdce / tenké střevo • radost • kontakt</small>
-      </a>
-      <a class="schema-mobile-card earth" href="#kruhy">
-        <strong>Kruhová komunikace</strong>
-        <span>Země • střed • ukotvení</span>
-        <small>slezina / žaludek • péče • regulace</small>
-      </a>
-      <a class="schema-mobile-card water" href="#tymy">
-        <strong>Sportovní týmy</strong>
-        <span>Voda • zima • obnova</span>
-        <small>ledviny / močový měchýř • důvěra • kapacita</small>
-      </a>
-      <a class="schema-mobile-card metal" href="#prednasky">
-        <strong>Interaktivní přednášky</strong>
-        <span>Kov • podzim • jasnost</span>
-        <small>plíce / tlusté střevo • dech • smysl</small>
-      </a>
-    </div>
-  </div>
-</section>
+        <div class="schema-mobile-list">
+          <a class="schema-mobile-card wood" href="#individualni">
+            <strong>Individuální setkávání</strong>
+            <span>Dřevo • jaro • růst a směr</span>
+            <small>játra / žlučník • rozhodnost • aktivace</small>
+          </a>
+          <a class="schema-mobile-card fire" href="#skupiny">
+            <strong>Malé skupiny (3–6 lidí)</strong>
+            <span>Oheň • léto • vztah a sdílení</span>
+            <small>srdce / tenké střevo • radost • kontakt</small>
+          </a>
+          <a class="schema-mobile-card earth" href="#kruhy">
+            <strong>Kruhová komunikace</strong>
+            <span>Země • střed • ukotvení</span>
+            <small>slezina / žaludek • péče • regulace</small>
+          </a>
+          <a class="schema-mobile-card water" href="#tymy">
+            <strong>Sportovní týmy</strong>
+            <span>Voda • zima • obnova</span>
+            <small>ledviny / močový měchýř • důvěra • kapacita</small>
+          </a>
+          <a class="schema-mobile-card metal" href="#prednasky">
+            <strong>Interaktivní přednášky</strong>
+            <span>Kov • podzim • jasnost</span>
+            <small>plíce / tlusté střevo • dech • smysl</small>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section id="omne" class="fade-in">
-      <div class="panel" style="margin-bottom:18px;">
-        <p class="lead">
-          I když „všechno funguje“, mnoho lidí v sobě cítí prázdno, únavu nebo tiché volání.
-          Ne proto, že by něco bylo špatně – ale proto, že se ztratilo spojení.
-        </p>
-        <p>
-          Skrze vědomý pohyb, jemnost a přítomnost nabízím prostor, kde není třeba výkonu.
-          Jen vnímání. Návrat k sobě skrze tělo, přírodu a rytmus života.
-        </p>
-      </div>
-
       <div class="panel soft">
         <h2>O mně</h2>
+
         <div class="about-wrap">
           <div class="portrait">
-            <img src="jan.jpg" alt="Jan Novosad" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj svou fotku jako <strong>jan.jpg</strong>'}))">
+            <img
+              src="jan.jpg"
+              alt="Jan Novosad"
+              loading="lazy"
+              onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj svou fotku jako <strong>jan.jpg</strong>'}))"
+            />
           </div>
 
           <div>
             <p class="lead">
-              Jsem muž, partner a otec dvou dcer. Mou životní cestu až do čtyřiceti doprovázel především pocit viny z minulosti a strach z budoucnosti.
-            </p>
-            <p>
-              Toto vnitřní nastavení mě dovedlo až na hranici možností mého těla. Chyběla mi stabilita a jasnost. V roli hodného kluka na všechny strany jsem se potácel životem ode zdi ke zdi.
-            </p>
-            <p>
-              Kolem čtyřicátých narozenin jsem dostal od života silný vzkaz skrze nemoc. Byl to dar, který mi přinesl jednoduchost, vděčnost za obyčejné věci, menší strach z konečnosti a možnost znovu začít ve stejném těle.
-            </p>
-            <p>
-              Učím se dělat věci, tvořit příležitosti a řešit situace v první řadě podle sebe a podle odpovědnosti za sebe a svou rodinu.
+              Jsem muž, partner a otec dvou dcer. Mou cestu dlouho formoval tlak na výkon, dokud mě tělo skrze nemoc nezastavilo a nevrátilo k tomu podstatnému – k vnímání, jednoduchosti a vnitřnímu bezpečí.
             </p>
 
             <div class="quote-box">
-              <p class="small" style="margin-bottom:0;">
-                Největším hybatelem a inspirací je pro mě má partnerka Gabriela a v druhé vlně obě naše dcery.
-                Všechny tři jsou pro mě zrcadlem mých pocitů nedostatečnosti, nejasnosti i směřování.
-                Díky nim se potkávám se svými strachy a v sobě probouzím odvahu a odpovědnost.
-              </p>
+              <p class="small" style="margin-bottom:0;">„Tělo není stroj. Je to živý systém, který komunikuje.“</p>
             </div>
+
+            <p>
+              Největším hybatelem a inspirací je pro mě má partnerka Gabriela a v druhé vlně obě naše dcery.
+              Všechny tři jsou pro mě zrcadlem mých pocitů nedostatečnosti, nejasnosti i směřování.
+              Díky nim se potkávám se svými strachy a v sobě probouzím odvahu a odpovědnost.
+            </p>
+
+            <p>
+              Vystudoval jsem Fakultu tělesné výchovy a sportu UK se specializací trenér fotbalu. Mou formální cestu doprovázela dlouholetá praxe v oblasti pohybu, vzdělávání trenérů a vedení kurzů pro instruktory, učitele i sportovní prostředí.
+            </p>
+
+            <p>
+              Vedle formálního vzdělání jsem čerpal z přirozeného pohybu, práce s tělem, dechem, energií, qigongu, tradiční čínské medicíny, kruhové komunikace i osobní zkušenosti vedené zvídavostí, smyslem a hledáním celistvosti.
+            </p>
+
+            <div class="quote-box">
+              <p class="small" style="margin-bottom:0;">„Cesta od výkonu k prožitku je návratem k sobě.“</p>
+            </div>
+
+            <p>
+              Dnes vytvářím prostor, kde se člověk může zastavit, vnímat a skrze tělo znovu najít jasnost, klid a kontakt se sebou.
+            </p>
           </div>
         </div>
       </div>
@@ -1033,8 +832,12 @@ max-width:860px;}
       <div class="panel">
         <h2>Jak pracuji</h2>
         <p class="lead">
-          Nepoužívám metody. Pracuji skrze přítomnost, intuici, vlastní zkušenost a zkušenosti klientů.
+          Nepoužívám jednu metodu. Pracuji skrze přítomnost, vztah, intuici, zkušenost a vnímání toho, co je právě živé a potřebné.
         </p>
+
+        <div class="quote-box">
+          <p class="small" style="margin-bottom:0;">„Nevedu tě k výkonu. Vedu tě k vnímání.“</p>
+        </div>
 
         <div class="services-grid" style="margin-top:18px;">
           <div class="service" id="individualni">
@@ -1050,7 +853,7 @@ max-width:860px;}
           </div>
 
           <div class="service" id="skupiny">
-            <h3>2. Vedení malých skupin (3–6 osob)</h3>
+            <h3>2. Malé skupiny (3–6 osob)</h3>
             <p>Skupinový pohyb jako cesta k přítomnosti, síle, stabilitě, koordinaci a radosti z těla.</p>
             <ul class="clean">
               <li>malé skupiny 3–6 osob</li>
@@ -1061,7 +864,7 @@ max-width:860px;}
           </div>
 
           <div class="service" id="kruhy">
-            <h3>3. Facilitace kruhové komunikace</h3>
+            <h3>3. Kruhová komunikace</h3>
             <p>Bezpečný prostor pro pravdivost, naslouchání a kontakt.</p>
             <ul class="clean">
               <li>otevřené skupiny</li>
@@ -1073,7 +876,7 @@ max-width:860px;}
           </div>
 
           <div class="service" id="tymy">
-            <h3>4. Pohybové konzultace pro sportovní týmy</h3>
+            <h3>4. Sportovní týmy</h3>
             <p>Efektivita, funkčnost pohybu, koordinace, stabilita, mobilita a osobní odpovědnost za přípravu těla i mysli.</p>
             <ul class="clean">
               <li>kvalita pohybového vzorce</li>
@@ -1103,9 +906,15 @@ max-width:860px;}
         <p class="lead">Ukázky z prostředí, ve kterém se potkáváme – v pohybu, v přírodě, v kruhu i v živém sdílení.</p>
 
         <div class="photo-grid">
-          <div class="photo-card"><img src="akce1.jpg" alt="Setkání a práce v pohybu" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>akce1.jpg</strong>'}))"></div>
-          <div class="photo-card"><img src="kruh1.jpg" alt="Kruhové sdílení a bezpečný prostor" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>kruh1.jpg</strong>'}))"></div>
-          <div class="photo-card"><img src="priroda1.jpg" alt="Pohyb a přítomnost v přírodě" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>priroda1.jpg</strong>'}))"></div>
+          <div class="photo-card">
+            <img src="akce1.jpg" alt="Setkání a práce v pohybu" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>akce1.jpg</strong>'}))">
+          </div>
+          <div class="photo-card">
+            <img src="kruh1.jpg" alt="Kruhové sdílení a bezpečný prostor" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>kruh1.jpg</strong>'}))">
+          </div>
+          <div class="photo-card">
+            <img src="priroda1.jpg" alt="Pohyb a přítomnost v přírodě" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj fotku jako <strong>priroda1.jpg</strong>'}))">
+          </div>
         </div>
       </div>
     </section>
@@ -1117,44 +926,21 @@ max-width:860px;}
           To, co dělám, lze číst i skrze dynamiku pěti elementů. Každý nese kvalitu pohybu, psychiky, orgánů, ročního období i způsobu, jakým se vztahujeme sami k sobě.
         </p>
 
-        <div class="elements-wrap" style="margin-top:20px;">
-          <div class="pentagram-card">
-            <div class="pentagram">
-              <div class="line" style="width:230px; left:95px; top:104px; transform:rotate(18deg);"></div>
-              <div class="line" style="width:230px; left:188px; top:104px; transform:rotate(162deg);"></div>
-              <div class="line" style="width:205px; left:106px; top:202px; transform:rotate(90deg);"></div>
-              <div class="line" style="width:230px; left:95px; top:294px; transform:rotate(-18deg);"></div>
-              <div class="line" style="width:230px; left:188px; top:294px; transform:rotate(-162deg);"></div>
-
-              <div class="node wood active" data-element="wood"><div class="emoji">🌿</div><div class="label">Dřevo</div></div>
-              <div class="node fire" data-element="fire"><div class="emoji">🔥</div><div class="label">Oheň</div></div>
-              <div class="node earth" data-element="earth"><div class="emoji">🪨</div><div class="label">Země</div></div>
-              <div class="node metal" data-element="metal"><div class="emoji">⚒️</div><div class="label">Kov</div></div>
-              <div class="node water" data-element="water"><div class="emoji">💧</div><div class="label">Voda</div></div>
-            </div>
-          </div>
-
-          <div class="element-detail" id="elementDetail"></div>
-        </div>
-
         <div class="polyvagal-grid">
           <div class="polyvagal-card">
-            <div class="element-kicker">Nervová soustava • ventrální větev</div>
-            <h3>Bezpečí, kontakt, otevřenost</h3>
-            <p class="small"><strong>Když je tělo v bezpečí:</strong> přichází klid, schopnost vnímat, být ve spojení, komunikovat a tvořit.</p>
-            <p class="small"><strong>Jak to podporuji:</strong> zpomalení, dech, kontakt se zemí, rytmus, jemný pohyb, hlas a bezpečný vztahový prostor.</p>
+            <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">Dřevo / Oheň</div>
+            <h3>Růst, vztah, pohyb vpřed</h3>
+            <p class="small">Jaro a léto přinášejí impuls, aktivaci, kontakt, radost a sdílení. Tam vzniká směr, život a odvaha být v pohybu.</p>
           </div>
           <div class="polyvagal-card">
-            <div class="element-kicker">Nervová soustava • sympatikus</div>
-            <h3>Aktivace, obrana, výkon</h3>
-            <p class="small"><strong>Když je systém v mobilizaci:</strong> tělo se chystá jednat, bojovat, utéct, zabrat, zvládnout tlak.</p>
-            <p class="small"><strong>Jak s tím pracuji:</strong> vědomé vybití napětí pohybem, návrat k dechu, orientace v prostoru a hledání bezpečné míry intenzity.</p>
+            <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">Země</div>
+            <h3>Střed, výživa, bezpečí</h3>
+            <p class="small">Země je návrat do středu. Schopnost opřít se o sebe, unést váhu života a vytvářet prostor, ve kterém se nervový systém může regulovat.</p>
           </div>
           <div class="polyvagal-card">
-            <div class="element-kicker">Nervová soustava • dorzální větev</div>
-            <h3>Stažení, útlum, odpojení</h3>
-            <p class="small"><strong>Když je toho příliš:</strong> tělo může ztuhnout, stáhnout se, ztratit energii, kontakt nebo chuť cokoliv řešit.</p>
-            <p class="small"><strong>Jaký je záměr setkání:</strong> nevytlačit člověka výkonem, ale jemně obnovit pocit bezpečí a postupně vracet život do těla.</p>
+            <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">Kov / Voda</div>
+            <h3>Jasnost, dech, obnova</h3>
+            <p class="small">Podzim a zima přinášejí uvolnění, orientaci, klid, hloubku a obnovu kapacity. Odtud se rodí smysl, hranice a vnitřní důvěra.</p>
           </div>
         </div>
       </div>
@@ -1165,8 +951,10 @@ max-width:860px;}
         <h2>Rytmus</h2>
         <p class="lead">Rytmus je přirozený jazyk těla. Dech, tep, krok, pohyb. Když se k němu vracíme, vracíme se i k sobě.</p>
         <p>V rytmu není třeba výkonu ani kontroly. Tělo se začne organizovat samo. Nervová soustava nachází oporu v opakování a předvídatelnosti. Vzniká prostor, kde se může objevit klid, vnímání a kontakt.</p>
-        <p>Rytmus propojuje tělo a mysl. Pomáhá uvolnit napětí, zpracovat emoce a vrátit pozornost z hlavy zpět do těla. To, co bylo zadrženo, se může postupně dokončit a odejít.</p>
-        <p class="small">Z pohledu nervové soustavy rytmus podporuje pocit bezpečí, pomáhá regulovat stres a vytváří podmínky pro učení a změnu. Mozek se učí skrze opakování a zkušenost – a právě rytmus je jedním z jeho přirozených základů.</p>
+
+        <div class="quote-box">
+          <p class="small" style="margin-bottom:0;">„V klidu se rodí změna.“</p>
+        </div>
 
         <div class="rhythm-grid">
           <div class="rhythm-card"><h3>Bezpečí</h3><p class="small">Opakování a pravidelnost dávají tělu signál, že může zůstat a uvolnit se.</p></div>
@@ -1191,7 +979,7 @@ max-width:860px;}
                 <p class="tiny" style="margin:0;">dlouhodobá individuální spolupráce</p>
               </div>
             </div>
-            <p class="review-text">„Honza Novosad je pro mne unikátní člověk. Je výborný trenér pohybu. Už přes 5 let s ním cvičím a svět se mi zlepšil po všech stránkách. Cítím se výrazně fyzicky lépe. Mám radost z pohybu a jsem daleko více vědomý při něm. Cvičíme vlastním tělem, uvolňujeme tělo, používáme TRX i venkovní posilovnu v naší obci. Honza je však i skvělý člověk a tak trochu šaman. Když jsme spolu začali cvičit, mluvili jsme primárně o pohybu. Ale když viděl, že mám zájem i o duševní stránku, začali jsme toho probírat více. Debaty s ním mi často pomáhají utřídit myšlenky a i při tréninku dosáhnout lepších výsledků. Začít cvičit s Honzou bylo jedno z nejlepších životních rozhodnutí, které jsem udělal.“</p>
+            <p class="review-text">„Honza Novosad je pro mne unikátní člověk. Je výborný trenér pohybu. Už přes 5 let s ním cvičím a svět se mi zlepšil po všech stránkách…“</p>
           </div>
 
           <div class="review">
@@ -1204,7 +992,7 @@ max-width:860px;}
                 <p class="tiny" style="margin:0;">individuální / online / příroda</p>
               </div>
             </div>
-            <p class="review-text">„Honzu jsem oslovila v době, kdy dělal osobního trenéra ve fitku. Líbila se mi pozitivní energie, kterou vyzařuje a taky tolerance, se kterou přijímá moje věčné remcání a skučení. Zvládli jsme spolu Covid, nemoci, stresy a spoustu změn v nás i kolem nás. Z fitka jsme se přesunuli na online a do přírody, od posilování a podrobného tréninkového plánu k náplni setkání řídící se aktuální inspirací a pocity. Cíl je stále stejný, budovat a udržovat sílu, výdrž a flexibilitu. Jsem vděčná za motivaci a podporu, které se mi dostává. Jo, a posilování mám dneska za odměnu.“</p>
+            <p class="review-text">„Honzu jsem oslovila v době, kdy dělal osobního trenéra ve fitku… Jo, a posilování mám dneska za odměnu.“</p>
           </div>
         </div>
       </div>
@@ -1217,7 +1005,7 @@ max-width:860px;}
         <div class="one-sheet">
           <div class="sheet-card">
             <h3>Krátký medailonek</h3>
-            <p class="small">Jan Novosad propojuje pohyb, práci s nervovým systémem, vnímání těla, rytmus a bezpečný prostor pro sdílení. Vychází z trenérského vzdělání, dlouholeté praxe s klienty i vlastní osobní cesty přes nemoc, změnu identity a návrat k jednoduchosti.</p>
+            <p class="small">Jan Novosad propojuje pohyb, práci s nervovým systémem, vnímání těla, rytmus a bezpečný prostor pro sdílení. Vychází z trenérského vzdělání, dlouholeté praxe i vlastní osobní cesty přes nemoc, změnu identity a návrat k jednoduchosti.</p>
           </div>
           <div class="sheet-card">
             <h3>Formáty vystoupení</h3>
@@ -1252,6 +1040,45 @@ max-width:860px;}
       </div>
     </section>
 
+    <section id="akce" class="fade-in">
+      <div class="panel soft">
+        <h2>Pozvání na akce</h2>
+        <p class="lead">Aktuální pozvánky na kruhy a setkání.</p>
+
+        <div class="flyers-grid">
+          <div class="flyer-card">
+            <div class="flyer-image">
+              <img
+                src="letak-dospivajici.jpg"
+                alt="Leták – kruhy pro dospívající"
+                loading="lazy"
+                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj leták jako <strong>letak-dospivajici.jpg</strong>'}))"
+              >
+            </div>
+            <div class="flyer-caption">
+              <h3>Kruhy pro dospívající</h3>
+              <p class="small">Placeholder pro leták, datum, místo a krátký popis akce.</p>
+            </div>
+          </div>
+
+          <div class="flyer-card">
+            <div class="flyer-image">
+              <img
+                src="letak-muzi-a-zeny.jpg"
+                alt="Leták – kruhy pro muže a ženy"
+                loading="lazy"
+                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj leták jako <strong>letak-muzi-a-zeny.jpg</strong>'}))"
+              >
+            </div>
+            <div class="flyer-caption">
+              <h3>Kruhy pro muže a ženy</h3>
+              <p class="small">Placeholder pro leták, datum, místo a krátký popis akce.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="kontakt" class="fade-in">
       <div class="panel">
         <h2>Kontakt</h2>
@@ -1271,30 +1098,17 @@ max-width:860px;}
             <h3>Další možnosti spojení</h3>
             <p class="small">Pracovní e-mail: <a href="mailto:jan.novosad@seznam.cz">jan.novosad@seznam.cz</a></p>
             <p class="small">Facebook: <a href="https://www.facebook.com/jan.novosad" target="_blank" rel="noopener noreferrer">jan.novosad</a></p>
-            <p class="tiny" style="margin-top:14px;">Až budeš chtít, můžeme sem doplnit i klikací WhatsApp skupiny nebo QR kódy.</p>
+
+            <div class="quote-box">
+              <p class="small" style="margin-bottom:0;">„Nenabízím řešení. Nabízím prostor, kde je můžeš objevit.“</p>
+            </div>
+
+            <p class="tiny">Do formuláře doplň svůj skutečný Formspree kód místo <strong>TVUJ_KOD</strong>.</p>
           </div>
         </div>
       </div>
     </section>
-      <section id="akce">
-  <div class="panel soft">
-    <h2>Pozvání na akce</h2>
 
-    <div class="flyers-grid">
-
-      <div class="flyer-card">
-        <img src="letak-dospivajici.jpg">
-        <h3>Kruhy pro dospívající</h3>
-      </div>
-
-      <div class="flyer-card">
-        <img src="letak-muzi-a-zeny.jpg">
-        <h3>Kruhy pro muže a ženy</h3>
-      </div>
-
-    </div>
-  </div>
-</section>
     <footer>
       © <span id="year"></span> Jan Novosad • pohyb • rytmus • bezpečí • přítomnost
     </footer>
@@ -1318,76 +1132,6 @@ max-width:860px;}
       });
     }, { threshold: 0.15 });
     faders.forEach(el => observer.observe(el));
-
-    const elementData = {
-      wood: {
-        text: `
-          <div class="element-kicker">Dřevo • jaro</div>
-          <h3>Růst, aktivace, počátek, energie nahoru</h3>
-          <p class="small"><strong>Orgánové souvislosti:</strong> játra / žlučník</p>
-          <p class="small"><strong>Vhodné pohybové aktivity:</strong> dynamická mobilita, chůze, pružnost, práce se směrem a aktivací</p>
-          <p class="small"><strong>Stravování:</strong> lehčí, zelené, kyselé, čerstvé, podporující proudění</p>
-          <p>Dřevo je pro mě moment začátku. Když se člověk zvedá z nehybnosti, hledá směr, probouzí v sobě impuls a dovoluje si jít nahoru.</p>
-        `
-      },
-      fire: {
-        text: `
-          <div class="element-kicker">Oheň • léto</div>
-          <h3>Zrání, dynamika, stabilita, síla, směřování, tvoření</h3>
-          <p class="small"><strong>Orgánové souvislosti:</strong> srdce / tenké střevo</p>
-          <p class="small"><strong>Vhodné pohybové aktivity:</strong> rytmický pohyb, proudění, koordinace, hravost, práce s projevem</p>
-          <p class="small"><strong>Stravování:</strong> lehčí, šťavnaté, osvěžující, podporující cirkulaci</p>
-          <p>Oheň je život, vztah a projev. V těle i ve skupině přináší radost, kontakt, tvoření a odvahu být vidět.</p>
-        `
-      },
-      earth: {
-        text: `
-          <div class="element-kicker">Země • přechod / pozdní léto</div>
-          <h3>Ukotvení, výživa, stabilita, střed</h3>
-          <p class="small"><strong>Orgánové souvislosti:</strong> slezina / žaludek</p>
-          <p class="small"><strong>Vhodné pohybové aktivity:</strong> stabilita, střed těla, pomalejší síla, uzemnění, přenos váhy</p>
-          <p class="small"><strong>Stravování:</strong> teplé, výživné, jednoduché, pravidelné</p>
-          <p>Země je pro mě návrat do středu. Schopnost nést váhu života, opřít se o sebe a zůstat ukotvený i v zátěži.</p>
-        `
-      },
-      metal: {
-        text: `
-          <div class="element-kicker">Kov • podzim</div>
-          <h3>Jasnost, hranice, struktura, disciplína</h3>
-          <p class="small"><strong>Orgánové souvislosti:</strong> plíce / tlusté střevo</p>
-          <p class="small"><strong>Vhodné pohybové aktivity:</strong> dechová práce, přesnost, jednoduchost, rytmus, uvolnění hrudníku</p>
-          <p class="small"><strong>Stravování:</strong> teplejší, jednodušší, kořenové, podpůrné pro dech a obranyschopnost</p>
-          <p>Kov učí hranici. Co je podstatné. Co je třeba pustit. Jak vytvořit řád, aniž by člověk ztvrdl.</p>
-        `
-      },
-      water: {
-        text: `
-          <div class="element-kicker">Voda • zima</div>
-          <h3>Klid, hloubka, obnova, důvěra</h3>
-          <p class="small"><strong>Orgánové souvislosti:</strong> ledviny / močový měchýř</p>
-          <p class="small"><strong>Vhodné pohybové aktivity:</strong> klidný pohyb, hlubší dech, jemná mobilita, regenerace, vědomá chůze</p>
-          <p class="small"><strong>Stravování:</strong> teplé, hutnější, výživné, podporující rezervy a vnitřní sílu</p>
-          <p>Voda je návrat do ticha, ke zdroji, do hloubky. Odtud se rodí důvěra, klid a skutečná obnova.</p>
-        `
-      }
-    };
-
-    const detail = document.getElementById('elementDetail');
-    const nodes = document.querySelectorAll('.node');
-
-    function setElement(key){
-      if (!detail) return;
-      detail.innerHTML = elementData[key].text;
-      nodes.forEach(n => n.classList.remove('active'));
-      const activeNode = document.querySelector(`.node[data-element="${key}"]`);
-      if (activeNode) activeNode.classList.add('active');
-    }
-
-    nodes.forEach(node => {
-      node.addEventListener('click', () => setElement(node.dataset.element));
-    });
-
-    setElement('wood');
   </script>
 </body>
 </html>
