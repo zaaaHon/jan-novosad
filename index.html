@@ -327,10 +327,11 @@
     }
 
     .services-pentagram-wrap{
-      position:relative;
-      min-height:520px;
-      max-width:860px;
-      margin:0 auto;
+     .services-pentagram-wrap{
+  position:relative;
+  min-height:760px;
+  max-width:1100px;
+  margin:20px auto 0;
     }
 
     .services-line{
@@ -339,7 +340,7 @@
       top:50%;
       transform-origin:left center;
       height:1px;
-      width:230px;
+      width:260px;
       background:linear-gradient(90deg, rgba(214,195,149,0.45), rgba(214,195,149,0.08));
       opacity:.7;
       pointer-events:none;
@@ -354,7 +355,7 @@
     .service-center{
       position:absolute;
       left:50%;
-      top:50%;
+      top:56%;
       transform:translate(-50%,-50%);
       width:150px;
       height:150px;
@@ -405,11 +406,31 @@
 }
     }
 
-    .service-orbit.top{left:50%;top:6px;--orbit-transform:translateX(-50%)}
-.service-orbit.right{right:52px;top:128px}
-.service-orbit.bottom-right{right:118px;bottom:34px}
-.service-orbit.bottom-left{left:118px;bottom:34px}
-.service-orbit.left{left:52px;top:128px}
+    .service-orbit.top{
+  left:50%;
+  top:70px;
+  --orbit-transform:translateX(-50%);
+}
+
+.service-orbit.right{
+  right:36px;
+  top:220px;
+}
+
+.service-orbit.bottom-right{
+  right:110px;
+  bottom:70px;
+}
+
+.service-orbit.bottom-left{
+  left:110px;
+  bottom:70px;
+}
+
+.service-orbit.left{
+  left:36px;
+  top:220px;
+}
     .service-orbit.wood{
   background:rgba(120,86,48,0.28);
   border-color:rgba(173,131,84,0.42);
@@ -636,17 +657,43 @@
       .services-map{padding:18px 8px 8px}
       .services-pentagram-wrap{min-height:520px;
 max-width:860px;}
-     .service-orbit{width:158px;min-height:116px;padding:12px}
+     .service-orbit{
+  width:170px;
+  min-height:126px;
+  padding:12px;
+}
+
 .orbit-title{font-size:14px}
 .orbit-sub{font-size:11px}
 .orbit-meta{font-size:10px}
-.service-orbit.top{top:2px}
-.service-orbit.right{right:0;top:126px}
-.service-orbit.bottom-right{right:18px;bottom:8px}
-.service-orbit.bottom-left{left:18px;bottom:8px}
-.service-orbit.left{left:0;top:126px}
-      .service-center{width:128px;height:128px}
-    }
+
+.service-orbit.top{
+  top:52px;
+}
+
+.service-orbit.right{
+  right:4px;
+  top:186px;
+}
+
+.service-orbit.bottom-right{
+  right:20px;
+  bottom:28px;
+}
+
+.service-orbit.bottom-left{
+  left:20px;
+  bottom:28px;
+}
+
+.service-orbit.left{
+  left:4px;
+  top:186px;
+}
+
+.services-pentagram-wrap{
+  min-height:700px;
+}
 
     @media (max-width:560px){
         .page-bg{
@@ -664,16 +711,49 @@ max-width:860px;}
       .float-btn{width:52px;height:52px}
       .services-pentagram-wrap{min-height:400px}
       .service-center{width:120px;height:120px}
-      .service-orbit{width:146px;min-height:108px;padding:10px}
+      .service-orbit{
+  width:150px;
+  min-height:118px;
+  padding:10px;
+}
+
 .orbit-title{font-size:13px}
 .orbit-sub{font-size:10px}
 .orbit-meta{font-size:9px}
-.service-orbit.top{top:0}
-.service-orbit.right{right:-2px;top:126px}
-.service-orbit.bottom-right{right:8px;bottom:0}
-.service-orbit.bottom-left{left:8px;bottom:0}
-.service-orbit.left{left:-2px;top:126px}
-    }
+
+.service-orbit.top{
+  top:48px;
+}
+
+.service-orbit.right{
+  right:0;
+  top:180px;
+}
+
+.service-orbit.bottom-right{
+  right:8px;
+  bottom:18px;
+}
+
+.service-orbit.bottom-left{
+  left:8px;
+  bottom:18px;
+}
+
+.service-orbit.left{
+  left:0;
+  top:180px;
+}
+
+.services-pentagram-wrap{
+  min-height:660px;
+}
+
+.service-center{
+  width:110px;
+  height:110px;
+  top:56%;
+}
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
@@ -740,7 +820,7 @@ max-width:860px;}
     <section class="fade-in">
       <div class="services-map">
         <div class="services-map-intro">
-          <h2>Mapa mé práce v rytmu 5 elementů</h2>
+          <h2>Mapa mých záměrů a prosředí v rytmu 5 elementů</h2>
           <p class="small">
             Nejsem seznam služeb. Z jednoho místa v sobě vstupuji do různých podob setkání podle toho,
             co je právě potřeba. Každá z nich vede k jiné kvalitě prožitku, ale vyrůstá ze stejného středu.
@@ -765,6 +845,11 @@ max-width:860px;}
   <div class="orbit-title">Individuální setkávání</div>
   <div class="orbit-sub">Dřevo • jaro • růst a nový směr</div>
   <div class="orbit-meta">játra / žlučník • vztek a rozhodnost • 23:00–03:00 • mobilizace a pohyb vpřed</div>
+</a>
+        <a class="service-orbit right fire" href="#skupiny">
+  <div class="orbit-title">Malé skupiny (3–6 lidí)</div>
+  <div class="orbit-sub">Oheň • léto • vztah, radost, sdílení</div>
+  <div class="orbit-meta">srdce / tenké střevo • radost a propojení • 11:00–15:00 • ventrální větev a kontakt</div>
 </a>
 
           <a class="service-orbit top wood" href="#individualni">
