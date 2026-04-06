@@ -33,18 +33,17 @@
     }
 
     .page-bg{
-      position:absolute;
-      inset:0 0 auto 0;
-      height:240vh;
-      z-index:0;
-      pointer-events:none;
-      background-image:
-        linear-gradient(rgba(10,14,12,0.24), rgba(10,14,12,0.54)),
-        url("background.jpg");
-      background-repeat:no-repeat,no-repeat;
-      background-position:center top, center top;
-      background-size:100% auto, 100% auto;
-    }
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(10,14,12,0.34), rgba(10,14,12,0.62)),
+    url("background.jpg");
+  background-repeat:no-repeat,no-repeat;
+  background-position:center center, center center;
+  background-size:cover, cover;
+}
 
     body::before{
       content:"";
