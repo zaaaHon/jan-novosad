@@ -255,6 +255,28 @@
       background:rgba(255,255,255,0.025);
       border-radius:0 18px 18px 0;
     }
+    .section-quote{
+  max-width:860px;
+  margin:26px auto 10px;
+  text-align:center;
+  padding:8px 18px;
+}
+
+.section-quote p{
+  margin:0;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.5;
+  color:rgba(255,248,236,0.92);
+  text-shadow:0 2px 14px rgba(0,0,0,0.26);
+}
+
+.section-quote.small p{
+  font-size:clamp(18px,2vw,24px);
+}
+
+.section-quote.tiny p{
+  font-size:clamp(16px,1.8vw,21px);
+}
 
     .portrait{
       width:100%;
@@ -537,14 +559,13 @@
 
     @media (max-width:860px){
       .page-bg{
-        height:190vh;
-        background-image:
-          linear-gradient(rgba(10,14,12,0.18), rgba(10,14,12,0.46)),
-          url("background.jpg");
-        background-repeat:no-repeat,no-repeat;
-        background-position:center top, center top;
-        background-size:auto 100%, auto 100%;
-      }
+  background-image:
+    linear-gradient(rgba(10,14,12,0.28), rgba(10,14,12,0.60)),
+    url("background.jpg");
+  background-repeat:no-repeat,no-repeat;
+  background-position:center center, center center;
+  background-size:cover, cover;
+}
 
       .topbar-inner{align-items:center;flex-direction:column}
       .nav{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -562,10 +583,13 @@
 
     @media (max-width:560px){
       .page-bg{
-        height:175vh;
-        background-position:center top, 58% top;
-        background-size:auto 100%, auto 100%;
-      }
+  background-image:
+    linear-gradient(rgba(10,14,12,0.24), rgba(10,14,12,0.62)),
+    url("background.jpg");
+  background-repeat:no-repeat,no-repeat;
+  background-position:56% center, 56% center;
+  background-size:cover, cover;
+}
 
       .nav{grid-template-columns:repeat(4,1fr);gap:6px}
       .nav a{font-size:11px;line-height:1.25}
@@ -648,6 +672,9 @@
             z rytmu těla, přírody, emocí, orgánů i nervové soustavy.
           </p>
         </div>
+      <div class="section-quote fade-in">
+  <p>„Jak se hýbeme, tak prožíváme.“</p>
+</div>
 
         <div class="schema-wrap">
           <svg class="schema-svg" viewBox="0 0 1000 760" role="img" aria-label="Mapa práce Jana Novosada v rytmu pěti elementů">
@@ -830,6 +857,9 @@
         </div>
       </div>
     </section>
+    <div class="section-quote small fade-in">
+  <p>„Cesta od výkonu k prožitku je návratem k sobě.“</p>
+</div>
 
     <section id="spoluprace" class="fade-in">
       <div class="panel">
@@ -902,7 +932,10 @@
         </div>
       </div>
     </section>
-
+<div class="section-quote small fade-in">
+  <p>„Nenabízím řešení. Nabízím prostor, kde je můžeš objevit.“</p>
+</div>
+    
     <section id="galerie" class="fade-in">
       <div class="panel soft">
         <h2>Prostor, pohyb, setkání</h2>
@@ -948,6 +981,9 @@
         </div>
       </div>
     </section>
+    <div class="section-quote tiny fade-in">
+  <p>„Bezpečí není v podmínkách. Bezpečí je stav nervového systému.“</p>
+</div>
 
     <section id="zvuk" class="fade-in">
       <div class="panel soft">
@@ -1081,7 +1117,9 @@
         </div>
       </div>
     </section>
-
+<div class="section-quote fade-in">
+  <p>„Návrat k sobě nezačíná v hlavě. Začíná v těle.“</p>
+</div>
     <section id="kontakt" class="fade-in">
       <div class="panel">
         <h2>Kontakt</h2>
@@ -1110,7 +1148,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>    
 
     <footer>
       © <span id="year"></span> Jan Novosad • pohyb • rytmus • bezpečí • přítomnost
