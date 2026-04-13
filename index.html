@@ -1077,122 +1077,83 @@
         </div>
       </div>
     </section>
-
-    <section id="akce" class="fade-in">
-      <div class="panel soft">
-        <h2>Pozvání na akce</h2>
-        <p class="lead">Aktuální pozvánky na kruhy a setkání.</p>
-
-        <div class="flyers-grid">
-          <div class="flyer-card">
-            <div class="flyer-image">
-              <img
-                src="letak-dospivajici.jpg"
-                alt="Leták – kruhy pro dospívající"
-                loading="lazy"
-                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj leták jako <strong>letak-dospivajici.jpg</strong>'}))"
-              >
-            </div>
-            <div class="flyer-caption">
-              <h3>Kruhy pro dospívající</h3>
-              <p class="small">Placeholder pro leták, datum, místo a krátký popis akce.</p>
-            </div>
-          </div>
-
-          <div class="flyer-card">
-            <div class="flyer-image">
-              <img
-                src="letak-muzi-a-zeny.jpg"
-                alt="Leták – kruhy pro muže a ženy"
-                loading="lazy"
-                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj leták jako <strong>letak-muzi-a-zeny.jpg</strong>'}))"
-              >
-            </div>
-            <div class="flyer-caption">
-              <h3>Kruhy pro muže a ženy</h3>
-              <p class="small">Placeholder pro leták, datum, místo a krátký popis akce.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section id="akce" class="fade-in">
+<section id="akce" class="fade-in">
   <div class="panel soft">
+    <h2>Aktuální akce</h2>
+    <p class="lead">Vybraná setkání, kruhy a další možnosti zapojení.</p>
 
-    <h2>Aktuální setkání a akce</h2>
-    <p class="lead">
-      Prostor pro setkání, pohyb, sdílení a návrat k sobě.
-    </p>
+    <!-- 2 hlavní viditelné letáky -->
+    <div class="flyers-grid">
 
-    <div class="grid-2" style="margin-top:18px;">
-
-      <!-- LETÁK 1 -->
       <div class="flyer-card">
-        <a class="flyer-image" 
-           href="https://www.facebook.com/ODKAZ1" 
-           target="_blank">
-          <img src="letak-dospivajici.jpg" alt="Kruhy pro dospívající">
+        <a class="flyer-image" href="https://www.facebook.com/ODKAZ-NA-UDALOST-1" target="_blank" rel="noopener noreferrer">
+          <img
+            src="letak-dospivajici.jpg"
+            alt="Kruhy pro dospívající"
+            loading="lazy"
+            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj leták jako <strong>letak-dospivajici.jpg</strong>'}))"
+          >
         </a>
         <div class="flyer-caption">
           <h3>Kruhy pro dospívající</h3>
-          <p class="small">Kliknutím otevřeš detail akce.</p>
-          <a class="btn" href="https://www.facebook.com/ODKAZ1" target="_blank">
-            Zobrazit událost
-          </a>
+          <p class="small">Kliknutím na obrázek nebo tlačítko otevřeš detail akce.</p>
+          <p style="margin-top:12px;">
+            <a class="btn primary" href="https://www.facebook.com/ODKAZ-NA-UDALOST-1" target="_blank" rel="noopener noreferrer">
+              Otevřít událost
+            </a>
+          </p>
         </div>
       </div>
 
-      <!-- LETÁK 2 -->
       <div class="flyer-card">
-        <a class="flyer-image" 
-           href="https://www.facebook.com/ODKAZ2" 
-           target="_blank">
-          <img src="letak-muzi-a-zeny.jpg" alt="Kruhy pro muže a ženy">
+        <a class="flyer-image" href="https://www.facebook.com/ODKAZ-NA-UDALOST-2" target="_blank" rel="noopener noreferrer">
+          <img
+            src="letak-muzi-a-zeny.jpg"
+            alt="Kruhy pro muže a ženy"
+            loading="lazy"
+            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'Nahraj leták jako <strong>letak-muzi-a-zeny.jpg</strong>'}))"
+          >
         </a>
         <div class="flyer-caption">
           <h3>Kruhy pro muže a ženy</h3>
-          <p class="small">Kliknutím otevřeš detail akce.</p>
-          <a class="btn" href="https://www.facebook.com/ODKAZ2" target="_blank">
-            Zobrazit událost
-          </a>
-        </div>
-      </div>
-
-      <!-- AKCE BEZ LETÁKU 1 -->
-      <div class="flyer-card">
-        <div class="flyer-caption">
-          <h3>Individuální setkání (otevřené termíny)</h3>
-          <p class="small">
-            Prostor pro zpomalení, pohyb a návrat k sobě.
+          <p class="small">Kliknutím na obrázek nebo tlačítko otevřeš detail akce.</p>
+          <p style="margin-top:12px;">
+            <a class="btn primary" href="https://www.facebook.com/ODKAZ-NA-UDALOST-2" target="_blank" rel="noopener noreferrer">
+              Otevřít událost
+            </a>
           </p>
-          <a class="btn primary" 
-             href="https://www.jan-novosad.cz" 
-             target="_blank">
-            Více informací
-          </a>
-        </div>
-      </div>
-
-      <!-- AKCE BEZ LETÁKU 2 -->
-      <div class="flyer-card">
-        <div class="flyer-caption">
-          <h3>Komunitní kruh (připravujeme)</h3>
-          <p class="small">
-            Sdílení, přítomnost a bezpečný prostor.
-          </p>
-          <a class="btn primary" 
-             href="https://www.facebook.com/ODKAZ3" 
-             target="_blank">
-            Sledovat událost
-          </a>
         </div>
       </div>
 
     </div>
 
+    <!-- další akce jen jako odkazy -->
+    <div style="margin-top:28px;">
+      <h3>Další události</h3>
+
+      <ul class="clean">
+        <li>
+          <a href="https://www.facebook.com/ODKAZ-NA-DALSI-AKCI-1" target="_blank" rel="noopener noreferrer">
+            Individuální setkání – otevřené termíny
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/ODKAZ-NA-DALSI-AKCI-2" target="_blank" rel="noopener noreferrer">
+            Komunitní kruh – připravujeme
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/ODKAZ-NA-DALSI-AKCI-3" target="_blank" rel="noopener noreferrer">
+            Workshop / přednáška – aktuální termíny
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </section>
     </section>
-<div class="section-quote fade-in">
+    <div class="section-quote fade-in">
   <p>„Návrat k sobě nezačíná v hlavě. Začíná v těle.“</p>
 </div>
     
